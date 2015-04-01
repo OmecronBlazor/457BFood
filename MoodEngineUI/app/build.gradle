@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:1.0.0-rc2'
     }
 }
 apply plugin: 'com.android.application'
@@ -24,7 +24,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -33,6 +33,6 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:20.+'
     compile 'com.android.support:appcompat-v7:20.+'
-    compile files('C:/Users/Adnan/Documents/FYDP/FYDP/MoodEngineUI/libs/jEN.jar')
-    compile files('C:/Users/Adnan/Documents/FYDP/FYDP/MoodEngineUI/libs/json-simple-1.1.1.jar')
+    compile files('C:/Users/Adnan/Documents/GitHub/457BFood/MoodEngineUI/libs/jEN.jar')
+    compile files('C:/Users/Adnan/Documents/GitHub/457BFood/MoodEngineUI/libs/json-simple-1.1.1.jar')
 }
