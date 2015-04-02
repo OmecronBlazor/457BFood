@@ -1,7 +1,6 @@
 package com.example.app;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,12 +12,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -28,7 +24,7 @@ import algorithm.Preference;
 /**
  * Created by Steven on 24/07/14.
  */
-public class AddMoodFragment extends Fragment {
+public class AddEventFragment extends Fragment {
     private List<MoodElement> mMoods;
 
     private TextView mAddMoodTitle;
@@ -42,7 +38,7 @@ public class AddMoodFragment extends Fragment {
 
     private ColorSelectAdapter mColorSelectAdapter;
 
-    public AddMoodFragment() {
+    public AddEventFragment() {
         mMoods = MainActivity.dbhandler.getAllMoods();
     }
 
@@ -99,7 +95,7 @@ public class AddMoodFragment extends Fragment {
                     moodToAdd.setID(MainActivity.dbhandler.addMood(moodToAdd));
                     MainActivity.table.addMood(moodToAdd);
 
-                    MoodSelectFragment fragmentToLaunch = new MoodSelectFragment();
+                    EventSelectFragment fragmentToLaunch = new EventSelectFragment();
                     ((MainActivity) view.getContext()).switchToFragment(fragmentToLaunch);
                 } else {
                     Toast.makeText(getActivity(), "Please fill out all of the information", Toast.LENGTH_LONG).show();

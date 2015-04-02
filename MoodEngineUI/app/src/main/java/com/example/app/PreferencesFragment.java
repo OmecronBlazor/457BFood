@@ -78,7 +78,7 @@ public class PreferencesFragment extends Fragment {
                     addSongs.execute();
                 }
 
-                ((MainActivity) v.getContext()).switchToFragment(new MoodSelectFragment(), false);
+                ((MainActivity) v.getContext()).switchToFragment(new EventSelectFragment(), false);
             }
         });
         return rootView;

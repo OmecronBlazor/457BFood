@@ -2,7 +2,6 @@ package com.example.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,14 +13,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ListView;
 
 import java.io.File;
@@ -80,7 +77,7 @@ public class MainActivity extends ActionBarActivity {
                             syncProcess.execute();
                         }
                         getSupportFragmentManager().beginTransaction()
-                                .add(R.id.container, new MoodSelectFragment())
+                                .add(R.id.container, new EventSelectFragment())
                                 .commit();
                     }
                     else{
@@ -120,35 +117,6 @@ public class MainActivity extends ActionBarActivity {
         Display dd = this.getWindowManager().getDefaultDisplay();
         DisplayMetrics dm = new DisplayMetrics();
         dd.getMetrics(dm);
-
-        mUploadCheckBox = new CheckBox(this);
-        ListView.LayoutParams lp = new ListView.LayoutParams(ListView.LayoutParams.MATCH_PARENT, ListView.LayoutParams.WRAP_CONTENT);
-        mUploadCheckBox.setLayoutParams(lp);
-        mUploadCheckBox.setText("Upload songs?");
-        mUploadCheckBox.setTextSize(8 * dm.scaledDensity);
-        mUploadCheckBox.setTextColor(Color.WHITE);
-        int padding = (int)(9*dm.density);
-        mUploadCheckBox.setPadding(padding, 0, 0, 0);
-        mUploadCheckBox.setGravity(Gravity.CENTER_VERTICAL);
-        mUploadCheckBox.setChecked(Uploadflag);
-        mUploadCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Uploadflag = isChecked;
-                settings = getSharedPreferences(PREFS_NAME, 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putBoolean("uploadSongs", isChecked);
-                if (isChecked) {
-                    /*AsyncUploadAnalyzer uploadSongs = new AsyncUploadAnalyzer(getContentResolver());
-                    if (Build.VERSION.SDK_INT >= 11) {
-                        //--post GB use serial executor by default --
-                        uploadSongs.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                    } else {
-                        uploadSongs.execute();
-                    }*/
-                }
-            }
-        });
 
         // Set the adapter for the list view
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
@@ -224,13 +192,13 @@ public class MainActivity extends ActionBarActivity {
     private void selectItem(int position) {
         switch (position) {
             case 0:
-                switchToFragment(new MoodSelectFragment(false));
+                switchToFragment(new EventSelectFragment());
                 break;
             case 1:
-                switchToFragment(new MoodSelectFragment(true));
+                switchToFragment(new EventSelectFragment());
                 break;
             case 2:
-                switchToFragment(new AddMoodFragment());
+                switchToFragment(new AddEventFragment());
                 break;
         }
     }
@@ -241,11 +209,8 @@ public class MainActivity extends ActionBarActivity {
 
     public void switchToFragment(Fragment frag, boolean addToBackstack) {
         Fragment activeFrag = getSupportFragmentManager().findFragmentByTag("active");
-        if (activeFrag != null && activeFrag.getClass() == PlayMusicFragment.class) {
-            ((PlayMusicFragment)activeFrag).stopService();
-        }
 
-        if (frag.getClass() == PlayMusicFragment.class || frag.getClass() == ExternalPlayerFragment.class) {
+        if (frag.getClass() == FoodRecommendationFragment.class) {
             frag.setHasOptionsMenu(true);
         } else {
             frag.setHasOptionsMenu(false);

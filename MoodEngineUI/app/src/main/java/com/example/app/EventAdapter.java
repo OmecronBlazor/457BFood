@@ -1,14 +1,10 @@
 package com.example.app;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import android.view.Gravity;
 import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +22,12 @@ import algorithm.Song;
 /**
  * Created by Steven on 2015-02-10.
  */
-public class MoodAdapter extends BaseAdapter {
+public class EventAdapter extends BaseAdapter {
     private Context mContext;
     private List<MoodElement> mMoods;
-    private boolean mIsExternalPlayer;
-    private int mSmallestTextSize;
 
-    public MoodAdapter(Context c, boolean isExternalPlayer) {
+    public EventAdapter(Context c) {
         mContext = c;
-        mIsExternalPlayer = isExternalPlayer;
         mMoods = MainActivity.dbhandler.getAllMoods();
     }
 
@@ -90,36 +82,16 @@ public class MoodAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                if (mIsExternalPlayer) {
-                    ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-                    NetworkInfo ni = cm.getActiveNetworkInfo();
-
-                    if (ni == null || !ni.isConnected()) {
-                        // There are no active networks.
-                        Toast toast = Toast.makeText(mContext, "You need to be connected to a network to stream music.", Toast.LENGTH_LONG);
-                        toast.setGravity(Gravity.CENTER, 0, 50);
-                        toast.show();
-                        return;
-                    } else {
-                        ProgressDialog progress = new ProgressDialog(view.getContext());
-                        progress.setTitle("Loading");
-                        progress.setMessage("Getting a recommendation from internet...");
-                        progress.show();
-                        //GetExternalRecommendation newrec = new GetExternalRecommendation(mMoods.get(pos), mContext, progress);
-                    }
-                } else {
-
                     ArrayList<Song> list = MainActivity.dbhandler.getRecommendation(mMoods.get(pos).mood_name());
 
                     if (!list.isEmpty()) {
                         try {
-                            Fragment fragment = new PlayMusicFragment(mMoods.get(pos), mIsExternalPlayer, list);
+                            Fragment fragment = new FoodRecommendationFragment(list, mMoods.get(pos));
                             ((MainActivity) view.getContext()).switchToFragment(fragment);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
-                }
             }
         });
 

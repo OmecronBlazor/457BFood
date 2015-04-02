@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
@@ -37,7 +35,7 @@ import algorithm.Song;
 /**
  * Created by Steven on 2015-03-18.
  */
-public class ExternalPlayerFragment extends Fragment {
+public class FoodRecommendationFragment extends Fragment {
 
     private TextView mTitleTextView;
     private TextView mArtistTextView;
@@ -46,7 +44,7 @@ public class ExternalPlayerFragment extends Fragment {
     private MoodElement mMood;
     private int songIter = 0;
     public static ArrayList<Song> mExternalSongList;
-    public ExternalPlayerFragment thisFragment;
+    public FoodRecommendationFragment thisFragment;
     protected Dialog dialog;
     private final String FEEDBACK = "Feedback";
     public List<ModificationParams> assessmentList = new ArrayList<ModificationParams>();
@@ -55,11 +53,9 @@ public class ExternalPlayerFragment extends Fragment {
 
     public Menu mMenu;
 
-    private MediaPlayerService mService;
+    public FoodRecommendationFragment(){}
 
-    public ExternalPlayerFragment(){}
-
-    public ExternalPlayerFragment(ArrayList<Song> songList, MoodElement mood) {
+    public FoodRecommendationFragment(ArrayList<Song> songList, MoodElement mood) {
         this.mMood = mood;
         this.mExternalSongList = songList;
         this.thisFragment = this;

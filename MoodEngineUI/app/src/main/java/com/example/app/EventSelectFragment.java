@@ -14,16 +14,11 @@ import algorithm.MoodElement;
 /**
  * Created by Steven on 24/07/14.
  */
-public class MoodSelectFragment extends Fragment {
+public class EventSelectFragment extends Fragment {
     private List<MoodElement> moods;
-    private boolean mLaunchExternalPlayer;
 
-    public MoodSelectFragment() {
+    public EventSelectFragment() {
         moods = MainActivity.dbhandler.getAllMoods();
-    }
-    public MoodSelectFragment(boolean launchExternalPlayer) {
-        moods = MainActivity.dbhandler.getAllMoods();
-        mLaunchExternalPlayer = launchExternalPlayer;
     }
 
     @Override
@@ -37,9 +32,9 @@ public class MoodSelectFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_mood_select, container, false);
 
         GridView gridView = (GridView) rootView.findViewById(R.id.mood_select_gridview);
-        gridView.setAdapter(new MoodAdapter(getActivity(), mLaunchExternalPlayer) );
+        gridView.setAdapter(new EventAdapter(getActivity()) );
 
-        ((MainActivity)getActivity()).setActionBarTitle(mLaunchExternalPlayer ? "Play Any Music" : "Play Local Music");
+        ((MainActivity)getActivity()).setActionBarTitle("Select Event");
         return rootView;
     }
 }
