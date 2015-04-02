@@ -6,11 +6,6 @@ import android.provider.MediaStore;
 
 import com.example.app.MainActivity;
 
-import com.echonest.api.v4.CatalogUpdater;
-import com.echonest.api.v4.EchoNestAPI;
-import com.echonest.api.v4.EchoNestException;
-import com.echonest.api.v4.SongCatalog;
-import com.echonest.api.v4.SongCatalogItem;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -20,7 +15,6 @@ import java.util.Map;
 
 public class AsyncTabuMod extends AsyncTask<String, String, Boolean> {
 
-    private EchoNestAPI en;
     MoodElement mood = null;
     double heaviness_mod = 0;
     double tempo_mod = 0;

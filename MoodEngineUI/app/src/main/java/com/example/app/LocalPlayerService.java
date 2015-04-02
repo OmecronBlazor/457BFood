@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -25,7 +24,6 @@ import java.util.ArrayList;
 import algorithm.ModificationType;
 import algorithm.MoodElement;
 import algorithm.Song;
-import network.SendInternalAssessment;
 
 /**
  * Created by Steven on 2015-03-16.
@@ -57,18 +55,6 @@ public class LocalPlayerService extends MediaPlayerService {
         MainActivity.dbhandler.updateMood(moodElement);
 
         ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo ni = cm.getActiveNetworkInfo();
-        if(ni!=null) {
-            if (ni.isConnected()) {
-                SendInternalAssessment sendAssessmenttoExternDB = new SendInternalAssessment(song);
-                if (Build.VERSION.SDK_INT >= 11) {
-                    //--post GB use serial executor by default --
-                    sendAssessmenttoExternDB.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                } else {
-                    sendAssessmenttoExternDB.execute();
-                }
-            }
-        }
 
         System.out.println(USER_PREF);
         System.out.println(moodElement.heaviness());

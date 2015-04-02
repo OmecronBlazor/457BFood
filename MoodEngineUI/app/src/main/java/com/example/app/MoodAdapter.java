@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
@@ -21,13 +19,10 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import algorithm.MoodElement;
 import algorithm.Song;
-import network.GetExternalRecommendation;
 
 /**
  * Created by Steven on 2015-02-10.
@@ -110,7 +105,7 @@ public class MoodAdapter extends BaseAdapter {
                         progress.setTitle("Loading");
                         progress.setMessage("Getting a recommendation from internet...");
                         progress.show();
-                        GetExternalRecommendation newrec = new GetExternalRecommendation(mMoods.get(pos), mContext, progress);
+                        //GetExternalRecommendation newrec = new GetExternalRecommendation(mMoods.get(pos), mContext, progress);
                     }
                 } else {
 

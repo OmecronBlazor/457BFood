@@ -33,8 +33,6 @@ import algorithm.ModificationParams;
 import algorithm.ModificationType;
 import algorithm.MoodElement;
 import algorithm.Song;
-import network.GetExternalRecommendation;
-import network.SendExternalAssessment;
 
 /**
  * Created by Steven on 2015-03-18.
@@ -131,7 +129,7 @@ public class ExternalPlayerFragment extends Fragment {
                                         progress.setTitle("Loading");
                                         progress.setMessage("Getting a recommendation from internet...");
                                         progress.show();
-                                        GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
+                                        //GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
                                     }
                                     else{
                                         Toast toast = Toast.makeText(getView().getContext(), "Can't get more recommendations without a network connection.", Toast.LENGTH_LONG);
@@ -273,7 +271,7 @@ public class ExternalPlayerFragment extends Fragment {
                                 progress.setTitle("Loading");
                                 progress.setMessage("Getting a recommendation from internet...");
                                 progress.show();
-                                GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
+                                //GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
                             }
                             else{
                                 Toast toast = Toast.makeText(getView().getContext(), "Can't get more recommendations without a network connection.", Toast.LENGTH_LONG);
@@ -312,7 +310,7 @@ public class ExternalPlayerFragment extends Fragment {
         NetworkInfo ni = cm.getActiveNetworkInfo();
         if(ni!=null) {
             if (ni.isConnected()) {
-                SendExternalAssessment sendAssessmenttoExternDB =
+                /*SendExternalAssessment sendAssessmenttoExternDB =
                         new SendExternalAssessment(song,moodElement,
                                 ModificationType.getModificationType(heaviness_pref).mod_id(),
                                 ModificationType.getModificationType(tempo_pref).mod_id(),
@@ -322,7 +320,7 @@ public class ExternalPlayerFragment extends Fragment {
                     sendAssessmenttoExternDB.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 } else {
                    sendAssessmenttoExternDB.execute();
-                }
+                }*/
             }
         }
 

@@ -19,7 +19,6 @@ import algorithm.AsyncDBAddsongs;
 import algorithm.MoodElement;
 import algorithm.MoodTable;
 import algorithm.Preference;
-import network.AsyncUploadAnalyzer;
 
 /**
  * Created by Steven on 24/07/14.

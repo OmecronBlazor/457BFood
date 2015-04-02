@@ -1,7 +1,5 @@
 package com.example.app;
 
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -18,19 +16,13 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import java.io.File;
 import java.util.List;
@@ -40,7 +32,6 @@ import algorithm.DatabaseHandler;
 import algorithm.MoodElement;
 import algorithm.MoodTable;
 import algorithm.Preference;
-import network.AsyncUploadAnalyzer;
 
 public class MainActivity extends ActionBarActivity {
     private String[] mSideTrayOptions;
@@ -148,13 +139,13 @@ public class MainActivity extends ActionBarActivity {
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putBoolean("uploadSongs", isChecked);
                 if (isChecked) {
-                    AsyncUploadAnalyzer uploadSongs = new AsyncUploadAnalyzer(getContentResolver());
+                    /*AsyncUploadAnalyzer uploadSongs = new AsyncUploadAnalyzer(getContentResolver());
                     if (Build.VERSION.SDK_INT >= 11) {
                         //--post GB use serial executor by default --
                         uploadSongs.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                     } else {
                         uploadSongs.execute();
-                    }
+                    }*/
                 }
             }
         });
