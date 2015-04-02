@@ -5,36 +5,53 @@ package algorithm;
  */
 public class ModificationParams {
 
-    private ModificationType h = null;
-    private ModificationType t = null;
-    private ModificationType c = null;
+    private ModificationType sourness = null;
+    private ModificationType spiciness = null;
+    private ModificationType sweetness = null;
+    private ModificationType bitterness = null;
+    private ModificationType fattiness = null;
 
     public ModificationParams(){}
 
-    public ModificationParams(ModificationType H, ModificationType T, ModificationType C){
-        this.h=H;
-        this.t=T;
-        this.c=C;
+    public ModificationParams(ModificationType sourness, ModificationType spiciness, ModificationType sweetness, ModificationType bitterness, ModificationType fattiness){
+        this.sourness = sourness;
+        this.spiciness = spiciness;
+        this.sweetness = sweetness;
+        this.bitterness = bitterness;
+        this.fattiness = fattiness;
     }
-    public ModificationType getH() {
-        return h;
+    public ModificationType sourness() {
+        return sourness;
     }
-    public void setH(ModificationType H) {
-        this.h = H;
+    public void setSourness(ModificationType sourness) {
+        this.sourness = sourness;
     }
-    public ModificationType getT() {
-        return t;
+    public ModificationType spiciness() {
+        return spiciness;
     }
-    public void setT(ModificationType t) {
-        this.t = t;
+    public void setSpiciness(ModificationType spiciness) {
+        this.spiciness = spiciness;
     }
-    public ModificationType getC() {
-        return c;
+    public ModificationType sweetness() {
+        return sweetness;
     }
-    public void setC(ModificationType c) {
-        this.c = c;
+    public void setSweetness(ModificationType sweetness) {
+        this.sweetness = sweetness;
     }
+    public ModificationType bitterness() {
+        return bitterness;
+    }
+    public void setBitterness(ModificationType bitterness) {
+        this.bitterness = bitterness;
+    }
+    public ModificationType fattiness() {
+        return fattiness;
+    }
+    public void setFattiness(ModificationType fattiness) {
+        this.fattiness = fattiness;
+    }
+
     public boolean isNull(){
-        return (h==null&&t==null&&c==null);
+        return (sourness==null&&spiciness==null&&sweetness==null&&bitterness==null&&fattiness==null);
     }
 }

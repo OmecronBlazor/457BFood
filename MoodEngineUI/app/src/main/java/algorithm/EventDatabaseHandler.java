@@ -222,10 +222,11 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     }
 
     public ArrayList<Food> getRecommendation(String event){
-        Preference eventpref = null;//MainActivity.table.getEvent(event).preference();
+        //TODO: CHANGE SHIT FROM MAIN ACTIIVTY
+        Preference eventpref = MainActivity.table.getEvent(event).preference();
         Cursor cursor = null;
         ArrayList<Food> foodList = null;
-        double rval = 0;//PrefRangeValue(MainActivity.table.getEvent(event).range_counter);
+        double rval = PrefRangeValue(MainActivity.table.getEvent(event).range_counter);
         int food_count = 0;
 
         while(food_count == 0) {

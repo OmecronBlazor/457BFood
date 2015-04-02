@@ -26,6 +26,9 @@ import java.util.List;
 
 import algorithm.AsyncSyncProcess;
 import algorithm.DatabaseHandler;
+import algorithm.EventDatabaseHandler;
+import algorithm.EventElement;
+import algorithm.EventTable;
 import algorithm.MoodElement;
 import algorithm.MoodTable;
 import algorithm.Preference;
@@ -35,9 +38,9 @@ public class MainActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private CheckBox mUploadCheckBox;
-    public static DatabaseHandler dbhandler;
+    public static EventDatabaseHandler dbhandler;
     public static Preference userpref;
-    public static MoodTable table;
+    public static EventTable table;
     private boolean maintainDataBase = true;
     public static boolean Uploadflag = true;
     public static String groovesharkSessionID = null;
@@ -52,20 +55,22 @@ public class MainActivity extends ActionBarActivity {
         Context context = getApplicationContext();
         if (savedInstanceState == null) {
             if(maintainDataBase==true) {
-                if (doesDatabaseExist(context, "moodEngineManager")) {
+                if (doesDatabaseExist(context, "foodEngineManager")) {
                     //query preferences
                     //check add/removed songs
                     //context.deleteDatabase("moodEngineManager");
-                    dbhandler = new DatabaseHandler(getApplicationContext());
-                    List<MoodElement> list = dbhandler.getAllMoods();
+                    dbhandler = new EventDatabaseHandler(getApplicationContext());
+                    List<EventElement> list = dbhandler.getAllEvents();
                     if(!list.isEmpty()) {
-                        table = new MoodTable(list);
-                        for(MoodElement get:list){
+                        table = new EventTable(list);
+                        for(EventElement get:list){
                             System.out.println(get.id());
-                            System.out.println(get.mood_name());
-                            System.out.println(get.heaviness());
-                            System.out.println(get.tempo());
-                            System.out.println(get.complexity());
+                            System.out.println(get.event_name());
+                            System.out.println(get.sourness());
+                            System.out.println(get.spiciness());
+                            System.out.println(get.sweetness());
+                            System.out.println(get.bitterness());
+                            System.out.println(get.fattiness());
                         }
                         settings = getSharedPreferences(PREFS_NAME, 0);
                         Uploadflag = settings.getBoolean("uploadSongs", true);
@@ -81,14 +86,14 @@ public class MainActivity extends ActionBarActivity {
                                 .commit();
                     }
                     else{
-                        dbhandler = new DatabaseHandler(getApplicationContext());
+                        dbhandler = new EventDatabaseHandler(getApplicationContext());
                         getSupportFragmentManager().beginTransaction()
                                 .add(R.id.container, new PreferencesFragment())
                                 .commit();
                     }
                 } else {
                     //create DB
-                    dbhandler = new DatabaseHandler(getApplicationContext());
+                    dbhandler = new EventDatabaseHandler(getApplicationContext());
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.container, new PreferencesFragment())
                             .commit();
@@ -96,13 +101,13 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
             else{
-                if (doesDatabaseExist(context, "moodEngineManager")) {
+                if (doesDatabaseExist(context, "foodEngineManager")) {
                     //query preferences
-                    //check add/removed songs
-                    context.deleteDatabase("moodEngineManager");
+                    //check add/removed foods
+                    context.deleteDatabase("foodEngineManager");
                 } else {
                     //create DB
-                    dbhandler = new DatabaseHandler(getApplicationContext());
+                    dbhandler = new EventDatabaseHandler(getApplicationContext());
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.container, new PreferencesFragment())
                             .commit();
