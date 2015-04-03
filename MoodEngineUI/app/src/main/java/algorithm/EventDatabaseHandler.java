@@ -37,7 +37,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_FOOD_ID = "id";
     private static final String KEY_FOOD_NAME = "name";
     private static final String KEY_FOOD_SOURNESS = "sourness";
-    private static final String KEY_FOOD_SPICINESS = "spiciness";
+    private static final String KEY_FOOD_SALTINESS = "saltiness";
     private static final String KEY_FOOD_SWEETNESS = "sweetness";
     private static final String KEY_FOOD_BITTERNESS = "bitterness";
     private static final String KEY_FOOD_FATTINESS = "fattiness";
@@ -47,12 +47,12 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_EVENT_ID = "id";
     private static final String KEY_EVENT_NAME = "name";
     private static final String KEY_EVENT_SOURNESS = "sourness";
-    private static final String KEY_EVENT_SPICINESS = "spiciness";
+    private static final String KEY_EVENT_SALTINESS = "saltiness";
     private static final String KEY_EVENT_SWEETNESS = "sweetness";
     private static final String KEY_EVENT_BITTERNESS = "bitterness";
     private static final String KEY_EVENT_FATTINESS = "fattiness";
     private static final String KEY_EVENT_COUNTER_SOUR = "sourness_counter";
-    private static final String KEY_EVENT_COUNTER_SPICY = "spiciness_counter";
+    private static final String KEY_EVENT_COUNTER_SALTY = "saltiness_counter";
     private static final String KEY_EVENT_COUNTER_SWEET = "sweetness_counter";
     private static final String KEY_EVENT_COUNTER_BITTER = "bitterness_counter";
     private static final String KEY_EVENT_COUNTER_FATTY = "fattiness_counter";
@@ -65,7 +65,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ASSESSMENT_EVENT_ID = "event_id";
     private static final String KEY_ASSESSMENT_FOOD_ID = "food_id";
     private static final String KEY_ASSESSMENT_SOURNESS = "sourness";
-    private static final String KEY_ASSESSMENT_SPICINESS = "spiciness";
+    private static final String KEY_ASSESSMENT_SALTINESS = "saltiness";
     private static final String KEY_ASSESSMENT_SWEETNESS = "sweetness";
     private static final String KEY_ASSESSMENT_BITTERNESS = "bitterness";
     private static final String KEY_ASSESSMENT_FATTINESS = "fattiness";
@@ -79,24 +79,24 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     //Song table create statement
     private static final String CREATE_TABLE_FOOD = "CREATE TABLE " + TABLE_FOOD + "("
             + KEY_FOOD_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " NVARCHAR,"
-            + KEY_FOOD_SOURNESS + " REAL," + KEY_FOOD_SPICINESS + " REAL,"
+            + KEY_FOOD_SOURNESS + " REAL," + KEY_FOOD_SALTINESS + " REAL,"
             + KEY_FOOD_SWEETNESS + " REAL," + KEY_FOOD_BITTERNESS + " REAL,"
             + KEY_FOOD_FATTINESS + " REAL," + KEY_FOOD_COUNTER + " INTEGER)";
 
     //Mood table create statement
     private static final String CREATE_TABLE_EVENTS = "CREATE TABLE " + TABLE_EVENTS + "("
             + KEY_EVENT_ID + " INTEGER PRIMARY KEY," + KEY_EVENT_NAME + " TEXT,"
-            + KEY_EVENT_SOURNESS + " REAL," + KEY_EVENT_SPICINESS + " REAL,"
+            + KEY_EVENT_SOURNESS + " REAL," + KEY_EVENT_SALTINESS + " REAL,"
             + KEY_EVENT_SWEETNESS + " REAL," + KEY_EVENT_BITTERNESS + " REAL,"
             + KEY_EVENT_FATTINESS + " REAL," + KEY_EVENT_COUNTER_SOUR + " INTEGER,"
-            + KEY_EVENT_COUNTER_SPICY + " INTEGER," + KEY_EVENT_COUNTER_SWEET + " INTEGER,"
+            + KEY_EVENT_COUNTER_SALTY + " INTEGER," + KEY_EVENT_COUNTER_SWEET + " INTEGER,"
             + KEY_EVENT_COUNTER_BITTER + " INTEGER," + KEY_EVENT_COUNTER_FATTY + " INTEGER,"
             + KEY_EVENT_COLOUR + " STRING," + KEY_EVENT_POSITION + " INTEGER" + ")";
 
     //Assessment Table create statement
     private static final String CREATE_TABLE_ASSESSMENTS = "CREATE TABLE " + TABLE_ASSESSMENTS + "("
             + KEY_ASSESSMENT_ID + " INTEGER PRIMARY KEY," + KEY_ASSESSMENT_EVENT_ID + " INTEGER,"
-            + KEY_ASSESSMENT_FOOD_ID + " INTEGER," + KEY_ASSESSMENT_SPICINESS + " INTEGER,"
+            + KEY_ASSESSMENT_FOOD_ID + " INTEGER," + KEY_ASSESSMENT_SALTINESS + " INTEGER,"
             + KEY_ASSESSMENT_SWEETNESS + " INTEGER," + KEY_ASSESSMENT_BITTERNESS + " INTEGER,"
             + KEY_ASSESSMENT_FATTINESS + " INTEGER)";
 
@@ -139,7 +139,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put( KEY_FOOD_NAME, food.name() ); // Food Name
         values.put( KEY_FOOD_SOURNESS, food.sourness() ); // Food's Sourness
-        values.put( KEY_FOOD_SPICINESS, food.spiciness() ); // Food's Spiciness
+        values.put( KEY_FOOD_SALTINESS, food.saltiness() ); // Food's Saltiness
         values.put( KEY_FOOD_SWEETNESS, food.sweetness() ); // Food's Sweetness
         values.put( KEY_FOOD_BITTERNESS, food.bitterness() ); // Food's Bitterness
         values.put( KEY_FOOD_FATTINESS, food.fattiness() ); // Food's Fattiness
@@ -161,7 +161,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
             //TODO: CSV SHIT FIGURE OUT FOR GETTING DATA TO PUT INTO DATABASE
             /*values.put(KEY_FOOD_NAME, foodCursor.getString(foodCursor.getColumnIndex(MediaStore.Audio.Media.TITLE))); // Song Name
             values.put( KEY_FOOD_SOURNESS, foodCursor.getString() ); // Food's Sourness
-            values.put( KEY_FOOD_SPICINESS, foodCursor.getString() ); // Food's Spiciness
+            values.put( KEY_FOOD_SALTINESS, foodCursor.getString() ); // Food's Saltiness
             values.put( KEY_FOOD_SWEETNESS, foodCursor.getString() ); // Food's Sweetness
             values.put( KEY_FOOD_BITTERNESS, foodCursor.getString() ); // Food's Bitterness
             values.put( KEY_FOOD_FATTINESS, foodCursor.getString() ); // Food's Fattiness*/
@@ -179,7 +179,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_FOOD, new String[] { KEY_FOOD_ID, KEY_FOOD_NAME, KEY_FOOD_SOURNESS,
-                                 KEY_FOOD_SPICINESS, KEY_FOOD_SWEETNESS, KEY_FOOD_BITTERNESS, KEY_FOOD_FATTINESS,
+                                 KEY_FOOD_SALTINESS, KEY_FOOD_SWEETNESS, KEY_FOOD_BITTERNESS, KEY_FOOD_FATTINESS,
                                  KEY_FOOD_COUNTER }, KEY_FOOD_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null);
         if (cursor != null)
@@ -233,8 +233,8 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
             String selectQuery = "SELECT  * FROM " + TABLE_FOOD
                     + " WHERE " + KEY_FOOD_SOURNESS + " BETWEEN " + String.valueOf(eventpref.sourness() - rval) + " AND "
                     + String.valueOf(eventpref.sourness() + rval) + " AND "
-                    + KEY_FOOD_SPICINESS + " BETWEEN " + String.valueOf(eventpref.spiciness() - rval) + " AND "
-                    + String.valueOf(eventpref.spiciness() + rval) + " AND "
+                    + KEY_FOOD_SALTINESS + " BETWEEN " + String.valueOf(eventpref.saltiness() - rval) + " AND "
+                    + String.valueOf(eventpref.saltiness() + rval) + " AND "
                     + KEY_FOOD_SWEETNESS + " BETWEEN " + String.valueOf(eventpref.sweetness() - rval) + " AND "
                     + String.valueOf(eventpref.sweetness() + rval) + " AND "
                     + KEY_FOOD_BITTERNESS + " BETWEEN " + String.valueOf(eventpref.bitterness() - rval) + " AND "
@@ -289,7 +289,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put( KEY_FOOD_NAME, food.name() ); // Food Name
         values.put( KEY_FOOD_SOURNESS, food.sourness() ); // Food's Sourness
-        values.put( KEY_FOOD_SPICINESS, food.spiciness() ); // Food's Spiciness
+        values.put( KEY_FOOD_SALTINESS, food.saltiness() ); // Food's Saltiness
         values.put( KEY_FOOD_SWEETNESS, food.sweetness() ); // Food's Sweetness
         values.put( KEY_FOOD_BITTERNESS, food.bitterness() ); // Food's Bitterness
         values.put( KEY_FOOD_FATTINESS, food.fattiness() ); // Food's Fattiness
@@ -305,7 +305,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put( KEY_FOOD_SOURNESS, food.sourness() ); // Food's Sourness
-        values.put( KEY_FOOD_SPICINESS, food.spiciness() ); // Food's Spiciness
+        values.put( KEY_FOOD_SALTINESS, food.saltiness() ); // Food's Saltiness
         values.put( KEY_FOOD_SWEETNESS, food.sweetness() ); // Food's Sweetness
         values.put( KEY_FOOD_BITTERNESS, food.bitterness() ); // Food's Bitterness
         values.put( KEY_FOOD_FATTINESS, food.fattiness() ); // Food's Fattiness
@@ -333,12 +333,12 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put( KEY_EVENT_NAME, event.event_name() ); // Event's Name
         values.put( KEY_EVENT_SOURNESS, event.sourness() ); // Event's Sourness
-        values.put( KEY_EVENT_SPICINESS, event.spiciness() ); // Event's Spiciness
+        values.put( KEY_EVENT_SALTINESS, event.saltiness() ); // Event's Saltiness
         values.put( KEY_EVENT_SWEETNESS, event.sweetness() ); // Event's Sweetness
         values.put( KEY_EVENT_BITTERNESS, event.bitterness() ); // Event's Bitterness
         values.put( KEY_EVENT_FATTINESS, event.fattiness() ); // Event's Fattiness
         values.put( KEY_EVENT_COUNTER_SOUR, event.modification_counter_sour ); // Event's Sourness Counter
-        values.put( KEY_EVENT_COUNTER_SPICY, event.modification_counter_spicy ); // Event's Spiciness Counter
+        values.put( KEY_EVENT_COUNTER_SALTY, event.modification_counter_salty ); // Event's Saltiness Counter
         values.put( KEY_EVENT_COUNTER_SWEET, event.modification_counter_sweet ); // Event's Sweetness Counter
         values.put( KEY_EVENT_COUNTER_BITTER, event.modification_counter_bitter ); // Event's Bitterness Counter
         values.put( KEY_EVENT_COUNTER_FATTY, event.modification_counter_fatty ); // Event's Fattiness Counter
@@ -367,8 +367,8 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_EVENTS, new String[] { KEY_EVENT_ID, KEY_EVENT_NAME, KEY_EVENT_SOURNESS,
-                        KEY_EVENT_SPICINESS, KEY_EVENT_SWEETNESS, KEY_EVENT_BITTERNESS, KEY_EVENT_FATTINESS,
-                        KEY_EVENT_COUNTER_SOUR, KEY_EVENT_COUNTER_SPICY, KEY_EVENT_COUNTER_SWEET, KEY_EVENT_COUNTER_BITTER,
+                        KEY_EVENT_SALTINESS, KEY_EVENT_SWEETNESS, KEY_EVENT_BITTERNESS, KEY_EVENT_FATTINESS,
+                        KEY_EVENT_COUNTER_SOUR, KEY_EVENT_COUNTER_SALTY, KEY_EVENT_COUNTER_SWEET, KEY_EVENT_COUNTER_BITTER,
                         KEY_EVENT_COUNTER_FATTY, KEY_EVENT_COLOUR, KEY_EVENT_POSITION }, KEY_EVENT_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null);
         if (cursor != null)
@@ -438,12 +438,12 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put( KEY_EVENT_NAME, event.event_name() ); // Event's Name
         values.put( KEY_EVENT_SOURNESS, event.sourness() ); // Event's Sourness
-        values.put( KEY_EVENT_SPICINESS, event.spiciness() ); // Event's Spiciness
+        values.put( KEY_EVENT_SALTINESS, event.saltiness() ); // Event's Saltiness
         values.put( KEY_EVENT_SWEETNESS, event.sweetness() ); // Event's Sweetness
         values.put( KEY_EVENT_BITTERNESS, event.bitterness() ); // Event's Bitterness
         values.put( KEY_EVENT_FATTINESS, event.fattiness() ); // Event's Fattiness
         values.put( KEY_EVENT_COUNTER_SOUR, event.modification_counter_sour ); // Event's Sourness Counter
-        values.put( KEY_EVENT_COUNTER_SPICY, event.modification_counter_spicy ); // Event's Spiciness Counter
+        values.put( KEY_EVENT_COUNTER_SALTY, event.modification_counter_salty ); // Event's Saltiness Counter
         values.put( KEY_EVENT_COUNTER_SWEET, event.modification_counter_sweet ); // Event's Sweetness Counter
         values.put( KEY_EVENT_COUNTER_BITTER, event.modification_counter_bitter ); // Event's Bitterness Counter
         values.put( KEY_EVENT_COUNTER_FATTY, event.modification_counter_fatty ); // Event's Fattiness Counter
@@ -465,7 +465,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Adding new assessment
-    public void addAssessment( int event_id, int food_id, ModificationType sourness_preference, ModificationType spiciness_preference,
+    public void addAssessment( int event_id, int food_id, ModificationType sourness_preference, ModificationType saltiness_preference,
                                ModificationType sweetness_preference, ModificationType bitterness_preference, ModificationType fattiness_preference )
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -474,7 +474,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         values.put( KEY_ASSESSMENT_EVENT_ID, event_id );
         values.put( KEY_ASSESSMENT_FOOD_ID, food_id );
         values.put( KEY_ASSESSMENT_SOURNESS, sourness_preference.mod_id() );
-        values.put( KEY_ASSESSMENT_SPICINESS, spiciness_preference.mod_id() );
+        values.put( KEY_ASSESSMENT_SALTINESS, saltiness_preference.mod_id() );
         values.put( KEY_ASSESSMENT_SWEETNESS, sweetness_preference.mod_id() );
         values.put( KEY_ASSESSMENT_BITTERNESS, bitterness_preference.mod_id() );
         values.put( KEY_ASSESSMENT_FATTINESS, fattiness_preference.mod_id() );
@@ -489,7 +489,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         ArrayList Indices
         -----------------
         0 - Sourness Preference
-        1 - Spiciness Preference
+        1 - Saltiness Preference
         2 - Sweetess Preference
         3 - Bitterness Preference
         4 - Fattiness Preference
@@ -499,7 +499,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         ArrayList<ModificationType> preference_list = new ArrayList<ModificationType>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_ASSESSMENTS, new String[] { KEY_ASSESSMENT_SOURNESS, KEY_ASSESSMENT_SPICINESS,
+        Cursor cursor = db.query(TABLE_ASSESSMENTS, new String[] { KEY_ASSESSMENT_SOURNESS, KEY_ASSESSMENT_SALTINESS,
                         KEY_ASSESSMENT_SWEETNESS, KEY_ASSESSMENT_BITTERNESS, KEY_ASSESSMENT_FATTINESS },
                 KEY_ASSESSMENT_EVENT_ID + " = ? and " + KEY_ASSESSMENT_FOOD_ID + " = ?",
                 new String[] { String.valueOf(event_id), String.valueOf(food_id) }, null, null, null);
@@ -546,7 +546,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Check for assessments for this event of the given format
-    public void updatePerfectAssessments( int event_id, double sournessmod, double spicinessmod,
+    public void updatePerfectAssessments( int event_id, double sournessmod, double saltinessmod,
                                           double sweetnessmod, double bitternessmod, double fattinessmod ) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -556,10 +556,10 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                 + " WHEN " + KEY_FOOD_SOURNESS + "+('" + sournessmod + "')<0 THEN 0"
                 + " ELSE " + KEY_FOOD_SOURNESS + "+('" + sournessmod + "') END, " +
 
-                KEY_FOOD_SPICINESS + " = "
-                + "CASE WHEN " + KEY_FOOD_SPICINESS + "+('" + spicinessmod + "')>10 THEN 10"
-                + " WHEN " + KEY_FOOD_SPICINESS + "+('" + spicinessmod + "')<0 THEN 0"
-                + " ELSE " + KEY_FOOD_SPICINESS + "+('" + spicinessmod + "') END, " +
+                KEY_FOOD_SALTINESS + " = "
+                + "CASE WHEN " + KEY_FOOD_SALTINESS + "+('" + saltinessmod + "')>10 THEN 10"
+                + " WHEN " + KEY_FOOD_SALTINESS + "+('" + saltinessmod + "')<0 THEN 0"
+                + " ELSE " + KEY_FOOD_SALTINESS + "+('" + saltinessmod + "') END, " +
 
                 KEY_FOOD_SWEETNESS + " = "
                 + "CASE WHEN " + KEY_FOOD_SWEETNESS + "+('" + sweetnessmod + "')>10 THEN 10"
@@ -579,7 +579,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                 " WHERE " + KEY_FOOD_ID + " IN (SELECT " + KEY_ASSESSMENT_FOOD_ID + " FROM " + TABLE_ASSESSMENTS +
                 " WHERE " + KEY_EVENT_ID + " = " + event_id +
                 " AND " + KEY_ASSESSMENT_SOURNESS + " = " + ModificationType.PERFECT.mod_id() +
-                " AND " + KEY_ASSESSMENT_SPICINESS + " = " + ModificationType.PERFECT.mod_id() +
+                " AND " + KEY_ASSESSMENT_SALTINESS + " = " + ModificationType.PERFECT.mod_id() +
                 " AND " + KEY_ASSESSMENT_SWEETNESS + " = " + ModificationType.PERFECT.mod_id() +
                 " AND " + KEY_ASSESSMENT_BITTERNESS + " = " + ModificationType.PERFECT.mod_id() +
                 " AND " + KEY_ASSESSMENT_FATTINESS + " = " + ModificationType.PERFECT.mod_id() + ")";
@@ -591,7 +591,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Updating single assessment
-    public void updateAssessment( int event_id, int food_id, ModificationType sourness_preference, ModificationType spiciness_preference,
+    public void updateAssessment( int event_id, int food_id, ModificationType sourness_preference, ModificationType saltiness_preference,
                                   ModificationType sweetness_preference, ModificationType bitterness_preference, ModificationType fattiness_preference )
     {
 
@@ -600,14 +600,14 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                 + KEY_ASSESSMENT_EVENT_ID + ", "
                 + KEY_ASSESSMENT_FOOD_ID + ", "
                 + KEY_ASSESSMENT_SOURNESS + ", "
-                + KEY_ASSESSMENT_SPICINESS + ", "
+                + KEY_ASSESSMENT_SALTINESS + ", "
                 + KEY_ASSESSMENT_SWEETNESS + ", "
                 + KEY_ASSESSMENT_BITTERNESS + ", "
                 + KEY_ASSESSMENT_FATTINESS + ") values ("
                 + "(select " + KEY_ASSESSMENT_ID + " from " + TABLE_ASSESSMENTS + " where " + KEY_ASSESSMENT_EVENT_ID + " = " + event_id
                 + " AND " + KEY_ASSESSMENT_FOOD_ID + " = " + food_id + "),"
                 + event_id + ", " + food_id + ", " + sourness_preference.mod_id() + ", "
-                                                   + spiciness_preference.mod_id() + ", "
+                                                   + saltiness_preference.mod_id() + ", "
                                                    + sweetness_preference.mod_id() + ", "
                                                    + bitterness_preference.mod_id() + ", "
                                                    + fattiness_preference.mod_id() + ")";

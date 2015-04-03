@@ -39,7 +39,7 @@ public class AddEventFragment extends Fragment {
     private ColorSelectAdapter mColorSelectAdapter;
 
     public AddEventFragment() {
-        mMoods = MainActivity.dbhandler.getAllMoods();
+        mMoods = null;//MainActivity.dbhandler.getAllMoods();
     }
 
     @Override
@@ -92,8 +92,8 @@ public class AddEventFragment extends Fragment {
             public void onClick(View view) {
                 if (mColorSelectAdapter.selectedIndex != -1 && !mMoodName.getText().toString().equals("")) {
                     MoodElement moodToAdd = new MoodElement(mMoodName.getText().toString(), new Preference(mHeavinessSeekBar.getProgress(), mTempoSeekBar.getProgress(), mComplexitySeekBar.getProgress()), colors[mColorSelectAdapter.selectedIndex], colors.length + 1);
-                    moodToAdd.setID(MainActivity.dbhandler.addMood(moodToAdd));
-                    MainActivity.table.addMood(moodToAdd);
+                    //moodToAdd.setID(MainActivity.dbhandler.addMood(moodToAdd));
+                    //MainActivity.table.addMood(moodToAdd);
 
                     EventSelectFragment fragmentToLaunch = new EventSelectFragment();
                     ((MainActivity) view.getContext()).switchToFragment(fragmentToLaunch);

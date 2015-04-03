@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import algorithm.AsyncDBAddsongs;
+import algorithm.EventTable;
 import algorithm.MoodElement;
 import algorithm.MoodTable;
 import algorithm.Preference;
@@ -43,11 +44,11 @@ public class PreferencesFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.userpref = new Preference(heavinessSeekbar.getProgress(),tempoSeekbar.getProgress(),complexitySeekbar.getProgress());
-                MainActivity.table = new MoodTable( MainActivity.userpref );
-                for(MoodElement mood : MainActivity.table.getAllMoods()) {
+                MainActivity.table = new EventTable( MainActivity.userpref );
+                /*for(MoodElement mood : MainActivity.table.getAllMoods()) {
                     int moodID = MainActivity.dbhandler.addMood(mood);
                     MainActivity.table.getMood(mood.mood_name()).setID(moodID);
-                }
+                }*/
                 Cursor mCursor = getActivity().getContentResolver().query(
                         MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                         new String[] {MediaStore.Audio.Media._ID, MediaStore.Audio.Media.TITLE, MediaStore.Audio.Media.ARTIST, MediaStore.Audio.Media.DURATION},

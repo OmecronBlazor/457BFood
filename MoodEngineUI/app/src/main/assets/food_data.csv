@@ -1,0 +1,591 @@
+Food,Sourness,Saltiness,Sweetness,Bitterness,Fat
+Almond (dried fruit),0,0.7,0.5,0,0.7
+Anchovies (canned),0.9,5.3,0.3,1.25,2.6
+Anchovies (fried or grilled),0.05,2.7,0.05,0.8,3.7
+Andouille sausage,0.5,2.9,1,0.7,2.6
+Andouillette sausage,0.47,4.04,1.03,0.73,4.21
+"Aperitif based on wine and liquor (Kir, etc.)",2,0.02,2.99,0.94,0.13
+Aperitif such as Martini (with lemon juice),3.7,0,5.1,0,0
+Aperitif such as Martini (without lemon juice),0.35,0.2,1.95,3.4,0.45
+Aperitif with anise,0.8,0,1.7,0.8,0.6
+Apple (cooked),2.4,0,3.53,0.47,1.2
+Apple (fresh fruit),1.99,0.02,2.77,0.38,0.2
+Apple (juice),1.92,0,3.22,0.14,0.16
+Apple (stewed),2.03,0.06,3.04,0.57,0.36
+Apple turnover,1.18,0.68,2.4,0.62,1.18
+Apricot (dried fruit),2.2,0,4.4,0,0
+Apricot (juice),3.5,0.2,3.17,0.9,0.9
+Apricot (stewed),2.2,0.1,2.5,0.7,0.1
+Apricots (fresh fruit),2.17,0.07,3.24,0.48,0.27
+Artichoke (with vinaigrette),2.37,2.35,0.88,1.22,1.63
+Asparagus (with mayonnaise),2.34,2.6,0.68,1.79,2.44
+Asparagus (with vinaigrette),1.21,1.39,0.58,1.23,1.39
+Avocado (with lemon juice or vinegar),4.47,0.95,0.65,0.11,4.33
+Avocado (with mayonnaise or vinaigrette),1.08,2.06,0.59,0.7,3.48
+Avocado with tuna or crab filling,1.7,3.3,2.7,1.1,7.3
+Babybel® (cheese),0.86,2.74,0.1,0.94,2.6
+Bacon or lard (stir-fried or grilled),0.87,4.99,0.81,1.1,5.79
+Baked ham,1.03,3.16,0.34,0.56,1.9
+Banana (dried fuit),0.6,0,2.8,1.9,0.6
+Banana (fresh fuit),0.97,0.03,2.88,0.56,1.96
+Bass (with lemon juice),0.8,0.5,0.4,0.15,0.75
+Bavarois-type fruit cake,1.46,0.24,4.33,0.28,2.66
+Beef (in gravy),1.12,2.73,0.52,0.74,2.7
+Beef (roast or grilled),1.26,2.75,0.55,0.49,1.95
+Beef bourguignon,1.17,3.17,0.58,0.67,2.88
+Beer (alcohol-free),1.5,0.1,0.3,6,0.1
+Beetroot (with vinaigrette),2.21,1.55,1.6,0.78,1.37
+Bell pepper (cooked),1.23,2.4,1.15,1.65,2.08
+Bell pepper (marinated),2.85,1.45,0.85,0.6,2.45
+Black blood pudding,0.94,3.01,1.01,0.84,4.14
+Blackberry (fresh fruit with sugar and cream),2.47,0,1.83,1.87,1
+Blackberry (jam),1.97,0.23,5.63,0.77,1.43
+Blackcurrant (fresh fruit),2.95,0.2,1.1,1.5,0.2
+Bleu d'Auvergne (cheese),2,3.33,0.11,1.99,4
+Bleu d'Auvergne (cheese with bread),1.83,4.4,0.8,3.7,5.37
+Bleu de Bresse (cheese),1.7,2.6,0.1,1.8,4.1
+Bleu de Bresse (cheese with bread),1.8,4,0.8,2.2,5.1
+Blueberries (fresh fruit),1.8,0.1,1.7,0.7,0.1
+Blueberries (jam),1.35,0.55,5.25,1.2,1.9
+Boar,1.15,2.8,0.45,0.6,2.85
+Bottled still water,0.39,0.47,0.17,0.7,0.07
+Boursin® (cheese),1.49,3.69,0.48,0.54,3.45
+Brandy (saké. cognac. vodka),1,0.1,0.8,1.3,0.75
+Bread with bacon,1.15,3.15,0.68,1,2.63
+Breaded cod (plain),0,3.6,0,0,3.9
+Breaded cod (with ketchup),0,2.3,2.6,0,3.85
+Breaded cod (with lemon juice),1.73,3.38,1.05,0,3.45
+Breakfast cereals with chocolate (with milk),1.9,1.5,4.3,0.2,4
+"Breakfast cereals with fruits, without chocolate",1.12,0.43,3.4,1.15,1.55
+"Breakfast cereals without fruits, without chocolate (with milk)",0,0.19,2.97,0,1.77
+Brie (cheese),0.8,2.94,0.28,1.62,4.03
+Brillat-Savarin (cheese),0.85,3.1,0.55,1.4,5.45
+Brioche (plain),0.3,0.98,2.4,0.25,1.45
+Broccoli (plain),0.7,0.8,0.3,0.9,0.3
+Broccoli (purée),0,1.1,1.4,0.8,1
+Broccoli (with cream),0.1,3.1,1.66,0.24,1.14
+Brown rice,0.24,2.14,0.49,0.12,1.24
+Brussels sprouts,1.68,2.88,0.98,1.7,1.93
+Bulgur,1.84,3.45,1.04,0.85,2.61
+Bun (plain),0.25,0.68,2.25,0.05,0.98
+Bun (with butter),0,1.2,1.6,0,4.3
+Bun (with chocolate),1.6,0.5,3.2,2.9,1.1
+Bun (with jam),1.1,1.4,4.5,1.1,2.1
+Bun (with marmelade of bitter orange),0,0,2.7,3.1,3.2
+Burbot,1.2,2.35,0.4,0.85,2.15
+Calf (in gravy),1.15,3.28,0.91,0.5,2.79
+Calf (roast or grilled),0.89,2.74,0.59,0.54,2.24
+Calf or poultry livers (grilled),1.1,2.51,0.57,1.18,1.86
+Calf head (with vinaigrette),1.6,2.35,0,0.8,1.9
+Camembert (cheese),0.69,3.25,0.22,1.81,4.39
+Camembert (cheese with bread),1.81,3.65,0.8,2.09,4.22
+Cancoillotte (cheese),0.84,3.01,0.17,0.66,3.22
+Candied almonds (Dragées),2.03,0.2,2.93,3.53,0.67
+Candy made from liquorice,0.9,0.67,3.23,1.07,0.73
+Cantal (cheese),2,3.7,0.2,1.45,3.8
+Caramel custard,1.1,0.16,4.16,0.78,2.62
+Carrot (cooked),1.07,2.1,1.8,0.57,1.4
+Carrot (juice),1,0.5,2.4,0.8,0.2
+Carrot (raw. plain),0.35,0.7,2.4,1.25,0
+Carré frais®,1.1,3.08,0.13,0.05,3.23
+Carré frais® (with bread),1.48,1.22,0.28,0.76,2.88
+Carrot (raw. with vinaigrette or lemon juice),1.97,2.49,1.48,0.36,1.73
+Carrot puree (with cream),0.9,3.15,2.8,0.75,2.3
+"Cashew nuts (dried fruit, salty)",0.2,1.85,1.45,0.6,1.15
+Cassoulet,1.17,2.27,1.37,0.8,3
+Cauliflower (plain),0.88,0.68,0.9,1.15,0.55
+Cauliflower (with sauce),1.17,2.45,0.53,0.92,1.69
+Celeriac (purée),0.75,2.58,0.75,0.75,2
+Celeriac (remoulade),1.21,2.2,0.93,0.98,1.5
+Cervelas,1.24,2.88,0.5,0.51,2.24
+Champagne,1.42,0.12,1.01,0.26,0.1
+Champignons crus (raw with vinaigrette),4.4,1.4,3.1,1.1,1.7
+Chaource (cheese),0,3.9,0,1.8,5.2
+Cheese puffs (Friands au fromage),0.2,2.6,1.1,0.15,1.3
+Cherry (fresh fruit),1.79,0.02,2.81,0.69,0.27
+Chestnut,0.5,0.3,1.78,0.4,2.48
+Chestnut purée,0,0,7.3,0,5.4
+Chicken  cordon bleu,0.6,3.9,0.23,0.28,3.08
+"Chicken (fillets, cutlets, etc.)",0.71,3.26,0.41,0.57,2.67
+Chicken (in gravy),1.72,3.22,0.59,0.55,2.53
+Chicken (roast),0.7,2.54,0.35,0.42,2.38
+Chili con carne,1.3,1.6,0.8,0,2.9
+Chinese fried rice,1.6,2.4,0.5,1.5,1.7
+Chipolata (sausage),1.23,4.19,0.7,0.35,3.24
+Chocolate custard,0.58,0.18,3.75,1.25,3.15
+Chocolate bars,1.01,0.43,5.27,0.75,3.45
+Chocolate Bread (Pain au chocolat),0.42,0.25,3.07,0.22,2.35
+Chocolate cake,0.55,0.39,3.91,0.84,2.6
+Chocolate cereal bars,0.45,1.15,2.95,1.8,0.85
+Chocolate chip cookies,0.43,0.85,2.85,0.63,0.98
+Chocolate croissants,1.6,0.3,3,1.1,3.9
+Chocolate with nuts,0.2,0.27,5.47,0.87,5.27
+Chorizo,1.1,4,0.9,0.9,5
+Cider,1.88,0.1,1.99,0.8,0.04
+Clafoutis,1.71,0.13,3.96,0.37,1.81
+Clementine,3.23,0.04,2.99,0.47,0.26
+Cocktail with alcohol,1.79,0.17,3.66,0.04,0.39
+Coconut,1.4,0,3.3,0,1.2
+Cod (boiled or steamed with mayonnaise),1.23,2.63,0.16,0.81,1.74
+Cod (grilled with lemon juice),1.6,3.13,0.67,0.43,2.03
+Cod (in aluminium wrapper with lemon juice),1.53,2.37,0.5,0.4,1.9
+Cod Fritters (Accras de morue),0.07,2.9,1.7,0.1,2.2
+Coffee (with sugar),1.28,0.02,2.52,3.16,0
+Coffee (without sugar),1.17,0.05,0.08,2.17,0.23
+Coffee custard,1,0.15,3.1,1.1,2.1
+Cola soda,4.34,0.05,4.93,1.26,0.51
+Comté (cheese),0.91,3.44,0.75,0.69,3.48
+Cooked ham,0.61,3.1,0.58,0.26,2.06
+Cooked ham (with salted butter),1.4,4.4,1,0,3.4
+Cooked ham (with gherkin),3.46,2.7,0.64,0.7,1.74
+"Cooked ham (shoulder, leg)",0.98,3.45,0.45,0.48,2.38
+Coulommiers (cheese),0.45,3.57,0.05,1.99,4.37
+Country-style bread (plain),0.66,1.91,1.18,0.41,0.45
+Country-style bread (with butter and jam),1,0.1,2.6,1.6,0.9
+Country-style bread (with butter),1.6,3.7,0.7,0.8,7.8
+Couscous,1.78,3.09,0.94,1.24,3.06
+Cow's milk semi-skimmed,0.6,0.7,1.1,0.25,1.1
+"Crab, brown crab (with mayonnaise)",2,4,1.2,1.3,2.9
+"Crab, brown crab (with vinaigrette)",0.1,2.5,0.3,0.1,0.8
+Cracker-type bread (with butter and jam),1,0,5.1,0,2.7
+Cracker-type bread (with dairy fat),0.68,1.73,1.33,0.23,3.93
+Cracker-type bread (with jam),0.83,1.63,3.93,0.48,0.83
+Cracker-type bread (with Nutella® spread),0,0.5,5.8,0,3.5
+Cream cake,0.39,0.48,4.98,0.16,3.85
+Crème brûlée,1.32,0.11,4.24,0.95,2.99
+Croissant,0.32,0.28,2.09,0.22,2.9
+Cucumber (with vinaigrette),1.57,2.35,0.55,1.27,1.3
+Custard,0.46,0,2.88,0.22,1.54
+Custard tart,1.55,0.05,3.48,0.48,2.35
+Dandelions (with vinaigrette),1.9,1.85,0.05,2.4,2.05
+Dark chocolate,1.08,0.09,2.78,3.47,3.16
+Date (dried fruit),0.7,0,4.23,0.4,1.87
+Donut,0.03,0.2,4.47,0.02,4.67
+Dry beans,1.51,2.84,0.55,0.86,2.12
+Dry goat cheese,1.74,2.97,0.36,1.3,2.76
+Dry sausage,0.73,4.1,0.41,0.37,3.52
+Dry-cured ham,1.39,3.7,0.35,0.72,2.53
+Duck (roast or grilled),0.68,3.03,0.58,0.51,2.95
+Duck confit,0.9,3,1.5,1,3.1
+Duck or goose liver (Foie gras),1.23,2.81,0.44,1.09,4.76
+Dumplings (Quenelles),0.83,3.34,0.77,0.53,2.99
+Edam (cheese),0,3,0.75,0,1.6
+Egg custard,1.1,0.08,3.52,0.86,1.9
+Eggplant,0.67,2.43,1.1,0.97,2.1
+Emmental (cheese),0.79,2.43,0.49,0.53,2.21
+Emmental (cheese. with bread),1.85,0.85,0.15,1.45,1.15
+Endive (braised),2.75,3.7,0.9,3.35,2.35
+Endive (cooked. with sauce),0.93,2.6,0.15,2.1,1.48
+Endive (salad),2.03,2.34,0.57,2.05,1.89
+Endives with ham,1.66,2.76,0.52,2.09,1.92
+Epoisses (cheese),0.4,4.03,0.28,2,5
+Ewe cheese,1.47,3.37,0,1.97,3.53
+Expresso coffee,0.4,0.2,0,4,0.05
+"Extruded salty Crackers (Curly®, Chipster®, etc.)",0.28,4.26,0.42,0.24,2.24
+Fava beans,2.6,3.55,1,1.6,2.45
+Fennel (sautéed),0.4,3.2,0.55,0.4,1.2
+Fig (dried fruit),0.53,0.02,2.98,0.63,1.5
+Fig (fresh fruit),1.23,0.13,2.67,0.63,2
+Fish & seafood terrines,1.5,3.29,0.64,1.21,2.24
+Flamby®-type custard,0.3,0.03,3.48,0.16,1.41
+Flavoured sparkling water (without lemon juice),1.13,0.2,3.05,0.68,0.23
+Flavoured water (with lemon juice),5.4,0,0,1.08,0
+Floating Island (Iles flottantes),0.53,0.28,4.2,0.26,1.88
+"Fortified wines (Pommel, Pineau, Porto, Macvin, Ratafia, etc.)",1.3,0.11,2.74,1.06,0.24
+Fourme d'Ambert (cheese),1.6,2.6,0.8,2.9,2.3
+Frankfurter and knack (with mustard),6.4,3,0,0,2.8
+Frankfurter and knack (without mustard),0.96,3.27,0.67,0.61,2.83
+Fresh goat cheese,1.7,2.76,0.34,0.85,2.65
+Fresh goat cheese (with bread),1.9,3.95,0.63,1.58,3.13
+Fried eggs,0.46,2.37,0.52,0.29,1.56
+Frisée salad (with vinaigrette),1.53,1.94,0.23,1.28,1.57
+Frogs (with sauce),1.15,2.5,0.7,0.6,2.3
+Fruit cake,0.3,1.3,4.4,0.2,0.8
+Fruit candy,2.35,0.05,5.5,0.45,0.5
+Fruit charlotte,2,0,3.75,0,1.3
+Fruit crumble,2.36,0.52,3.92,0.46,2.22
+Fruit soda,2.13,0.11,4.56,1.39,0.39
+Fruit sorbet (ice lolly),1.15,0.03,3.11,0.35,0.3
+Fruit tart,2.6,0.46,3.59,0.57,2.06
+"Fruit-flavoured beer (different from lambic, krieck type)",0,0,0.5,2.1,0
+"Fruit-flavoured beer (lambic, krieck type)",3.7,0,2.4,2.07,0
+Garlic sausage,1.01,2.81,0.68,0.84,2.79
+Gingerbread,0.53,0.83,4.36,0.75,2.09
+Gizzards,0.53,2.88,0.95,0.15,1.85
+Gnocchi,0.14,2.73,0.67,0.08,2.29
+Gorgonzola (cheese),3.4,4.2,0,2.4,4.4
+Gouda (cheese),0.29,4.03,0.17,0.46,3.84
+Grape (dried fruit),1.8,0.4,4.3,1,2
+Grape (juice),2.07,0.13,3.67,0.87,0.5
+Grapefruit (fresh fruit),2.58,0.03,1.39,2.49,0.02
+Grapefruit (fresh fruit. with sugar),4.4,0.08,3.08,2.64,0.38
+Grapefruit (juice),3.88,0.15,3.33,4.33,0.03
+Green beans (plain),0.88,1,0.6,0.58,0.45
+Green beans (with fat),1.15,0.65,1.05,1.5,1.15
+Green beans (with salt and fat),0.8,3.03,0.8,0.73,1.79
+Green beans (with salt),0.99,2.36,0.61,0.84,0.56
+Green cabbage. white cabbage (cooked),1.41,2.19,0.27,1.04,0.9
+Green cabbage. white cabbage (with vinaigrette),2.57,2.37,0.9,1.07,2.37
+Gruyère (cheese),1.8,3.5,0.3,0.8,2.9
+Gruyère puff pastry (Gougère),0.36,3.2,0.39,0.23,2.06
+Guacamole,0,4.8,0,0,4.1
+Guinea fowl (roast),1.07,2.13,0.07,0.73,2.05
+Hake (breaded),0.14,3.84,0.07,0.3,3.93
+Hake (grilled),0,3.7,0,0,2
+Hake (grilled. with lemon juice),2.9,3.87,0.27,0.33,2.57
+Hake (in tinfoil),0.9,2.9,0.1,0,3.9
+Hake (with sauce),0.7,2.26,0.86,0.43,1.61
+Ham and cheese grilled sandwich (Croque-monsieur),0.36,3.86,0.81,0.15,3.54
+Ham with parsley,1.62,3.87,0.77,0.5,2.97
+Hamburger,0.65,2.55,1.34,0.68,1.83
+Hard boiled eggs (Nature),0.2,0.58,0.2,0.35,0.8
+Hard boiled eggs (with mayonnaise),1.57,2.71,1.14,0.29,3.11
+Hard boiled eggs (with salt),0.26,2.01,0.68,0.31,1.29
+Hard boiled eggs (with vinaigrette),0.72,1.28,0.68,0.6,1.32
+Hazelnuts (dried fruit),0.4,0.43,0.93,1.4,1.03
+Herb tea (plain),1,0,0,0.77,0.2
+Herb teas (with sugar or honey),0.24,0.05,2.2,0.53,0.03
+Herrings,1.04,3.26,0.08,0.78,2.44
+Horseradish (raw. with salt),1.9,2.98,0.07,1.25,0.4
+Hot dog,1.58,3,1,0.93,2.1
+Hot drink made from chicory (with sugar),0.9,0.65,2.3,2.15,1.25
+Ice cream,0.93,0.11,4.16,0.62,2.39
+Ice cream bars,1.23,0.2,5.07,1.07,2.97
+Kebab,0.5,3.4,0.6,0,3.55
+Kidneys (in gravy),1.54,2.77,0.3,0.91,2.3
+Kiri® (cheese),2.44,2.94,0.07,1.14,2.77
+Kiwi (dried fruit),1.7,0.4,3.7,0.3,1.8
+Kiwi (fresh fruit),2.81,0.02,2.15,0.52,0.1
+Kouign-Amann (cake),0.03,0.6,4.47,0,8.37
+Lamb or mutton (in gravy),1.09,2.67,0.56,0.56,3.1
+Lamb or mutton (roast or grilled),0.86,2.32,0.34,0.6,2.52
+Langres (cheese),1.2,5.7,0.5,2.8,5.2
+Lasagna or pasta Bolognese,1.83,3.21,1.21,0.34,3.08
+Latte (with sugar),0.84,0.05,1.98,1.42,1.15
+Latte (without sugar),0.17,0,0.13,3.43,1.59
+Leek (melted ),2.63,2.8,1.17,0,2.2
+Leek (with vinaigrette),1.95,1.93,0.45,0.82,1.47
+Lemon (fresh fruit),8.9,0.3,0.4,4.1,0.5
+Lentils,0.56,2.91,0.76,0.85,1.82
+Lentils (salad),1.45,2.6,0.78,0.68,1.65
+"Light lager (1664, Heineken®, Kronenbourg®, etc.)",0.39,0.04,1.72,5.25,0.07
+Litchi (fresh fruit),1.1,0.4,4.1,2,0.5
+Litchi (juice),0.5,0.5,5.4,1.6,0.8
+Lobster (armorican),0.4,4.5,0.4,0.4,3
+Macaroons,1.88,0.07,3.35,0.48,1.55
+Mackerel (canned),0.87,2.67,0.5,0.53,0.67
+Mackerel (marinated),1.3,2.4,0,0.65,3.15
+Madeleines (moist sponge cake),1.6,1.2,3.6,0.6,4
+Mango (dried fruit),1.7,0.3,4.3,0.3,1.9
+Mango (fresh fruit),2.28,0.05,3.75,0.99,1.51
+Marinated mussels,5.65,1.4,0.7,1.4,0.5
+Mascarpone (cheese),0.8,1.3,0.4,0.6,6.8
+Mashed potatoes,0.62,1.63,1.25,0.57,1.32
+Mashed potatoes (with butter or cream),0.62,2.78,1.48,0.32,2.47
+Meat pie (Pâté en croûte),1.27,3.18,0.54,0.65,2.49
+Meatballs,0.52,2.3,0.38,0.92,2.64
+Melon water (fresh fruit),1.09,0.23,3.61,0.44,0.27
+Merguez (sausage),0.09,3.57,0.13,0.27,4.05
+Meringue,0,0,5.33,0,0
+Milk chocolate,0.7,0.55,5.8,0.75,4.5
+Milk chocolate (hot drink),0.36,0.19,3.06,0.34,1.91
+Mimolette (cheese),1.5,2.4,0,1.4,2.8
+Minced beef patty,0.81,2.52,0.44,0.32,2.34
+Mints,0.35,0.05,5.35,0.15,0.05
+Mix fruits (juice),3.85,0.28,2.58,1.6,1.2
+Mix fruits (salad),2.38,0.01,2.46,0.85,0.71
+Mix fruits (stewed),2.47,0.03,3.33,0.39,0.59
+Mix vegetables & starch,0.98,2,0.97,1.01,2.25
+Mix vegetables (cooked),0.97,2.52,1.06,0.79,1.9
+Mix vegetables (juice),0.7,2.4,1.45,0.95,0.65
+Mix vegetables (salad),2.38,3.32,1.26,1,2.45
+Mix vegetables (soup),1.03,1.59,0.5,0.76,0.59
+Mix vegetables (soup. with cream),1.54,2.86,0.76,1.06,2.8
+Mix vegetables (stewed),0.6,2.2,4.1,1.7,5.6
+Mixed salads (salad based),3.15,2.63,0.65,1.74,2.17
+Mixed salads (starch based with cold cuts or fish),1.78,3.36,0.83,0.5,2.31
+Mixed salads (starch based without cold cuts or fish),1.27,2.37,0.92,1.07,3.3
+Mixed salads (tomato based),1.54,1.4,2.08,0.32,1.42
+Mont d'or (cheese),1.69,2.93,0.09,1.78,3.68
+Montbéliard sausage,1.33,3.2,0.33,0.83,2.78
+Morbier (cheese),1.19,3.23,0.28,1.31,3.26
+Mortadella,1.51,3.11,0,1.06,2.98
+Morteau sausage,1.18,3.14,0.32,0.88,2.84
+Moussaka,0.9,3.76,0.9,1.18,4.46
+Mousse and Liégeois with caramel,1.05,0.15,3.1,1.3,2.05
+Mousse and Liégeois with chocolate,0.23,0.04,4.23,0.73,3.33
+Mousse and Liégeois with coffee,0.33,0.07,3.63,0.57,1.83
+Muffin type cake,0.5,0.6,3.25,0.15,1.65
+Munster (cheese),1.18,3.63,0.43,1.75,3.65
+Munster (cheese. avec pain),0.85,3.55,0.5,2.85,4.3
+Mushrooms (sautéed),1.15,3.09,0.78,1.1,2.59
+Mushrooms (with sauce),1.46,2.78,0.34,1.13,2.21
+Muskmelon (fresh fruit),0.56,0.06,3.23,0.35,0.21
+Mussels (white wine. cream sauce),1.02,3.35,0.24,0.88,1.06
+Nectarine (fresh fruit),1.93,0.04,2.43,0.54,0.33
+Non extruded salty Crackers (Tuc®. etc.),0.3,3.35,1.4,0.2,0.68
+Olives (black),2.22,3.49,0.55,1.6,1.77
+Olives (green),2.48,3.02,0.53,1.42,1.67
+Omelette (with cheese),1.45,3,0.55,0.45,2.45
+Omelette with potatoes,0.35,3.02,0.68,0.3,2.73
+Omelette (with Viandox),0,2.9,0,0,2
+Omelette (with vinegar),2.07,2.97,1.17,0.9,2.6
+Orange (fresh fruit),2.37,0.01,2.79,0.8,0.08
+Orange (juice),2.78,0.09,2.81,0.81,0.17
+Oriental pastries,0.78,0.18,4.3,0.71,3.25
+Oysters (with lemon juice),3,3.63,0.43,1.07,1.97
+Oysters (without lemon juice),1.7,3.45,0,2.15,0.7
+Paella,0.22,3.87,0.83,0.72,3.36
+Palm hearts (with vinaigrette),4.33,2.8,1.5,0.37,2.17
+Parmesan (cheese),0.43,5.37,0.17,0.13,5.93
+Passion fruit (fresh fruit),6.2,0.02,1.93,0.22,0.2
+Pasta (unsalted),0.9,0.2,0.8,0.6,0.5
+Pasta (with cheese and tomato sauce),2.5,2.62,1.07,0.6,2.27
+Pasta (with cheese),0.65,2.69,0.53,0.45,2.25
+Pasta (with gravy),0.86,2.41,0.66,0.51,1.81
+Pasta (with ketchup),0.5,2.6,3.5,0,2.05
+Pasta (with olive oil and cheese),0.02,2.97,0.4,0.05,2.83
+Pasta (with salt and butter or cream),0.34,3.15,0.56,0.14,2.52
+Pasta (with salt),0.38,1.82,0.26,0.26,0.96
+Pasta (with soy sauce),1.2,2.5,0,1.8,1
+Pasta (with tomato sauce),1.3,1.8,1.1,0.6,2.07
+Pasta gratin,1.3,3,0.55,0.8,2.63
+Pasta with carbonara sauce,0.8,2.9,1,1.2,3.2
+Pâtés (meat),1.36,3.32,0.55,0.62,3.09
+Peach (fresh fruit),1.85,0.04,2.9,0.53,0.29
+Peach (stewed),3.8,0.6,5.2,0.9,3.9
+Pear (fresh fruit),1.15,0.08,3.15,0.52,0.2
+Peas,0.75,1.95,1.51,0.68,1.49
+Persimmon,0,0,3.6,0,1.6
+Petit Suisse- (soft cheese flavoured or with fruits),1.22,0.02,3.5,0.42,2.4
+Petit Suisse- (soft cheese with sugar and cream),1.48,0,3.43,0,3.98
+Petit Suisse- (soft cheese with sugar or jam),1.81,0.05,2.85,0.52,2.25
+Pickled pork with lentils,0.6,4.9,0.9,1.2,4.9
+Pies,2.15,4.33,1.08,1.03,3.95
+Pigeon (roast),0.6,2.4,0,0.3,1.4
+Pineapple (fresh fruit),2.18,0.03,3.54,0.89,0.37
+Pineapple (in syrup),1.63,0,3.58,0.68,0.7
+Pineapple (juice),2.15,0.25,4.15,0.8,0.4
+Pistachios (dry fruits. salted),0.53,2.27,1.13,1,1.73
+Pizzas,1.31,3.46,0.86,0.51,2.65
+Plaice (with lemon juice),2.7,1.06,0.38,0.88,2
+Plaice (without lemon juice),0.6,4.1,0.8,1.1,3.7
+Plums (fresh fruit),1.71,0.06,3.42,1.05,0.32
+Pomelo (fresh fruit),3.33,0.1,1.5,2.23,0.05
+Pork (in gravy),1.57,2.6,0.36,0.57,2.49
+Pork (roast or grilled),0.51,2.96,0.43,0.38,2.81
+Potato chips,0.42,4.54,0.7,0.44,3.19
+Potato croquettes,0.34,3.4,0.45,0.18,3.1
+Potato gratin / Dauphinois gratin,0.51,3.41,0.83,0.15,2.72
+Potatoes (fried or sautéed),0.47,3.04,0.72,0.34,2.99
+Potatoes (salad),1.2,1.83,0.6,0.4,1.93
+Potatoes (steam or boiled),0.13,2.3,0.6,0.43,1.33
+Potatoes (with cheese),1.23,2.45,1,0.75,3.68
+Potatoes (with ketchup),4.47,2.13,1.93,0.48,2.52
+Potatoes (with mayonnaise),0.68,4.03,0.65,0.45,4.08
+Potatoes (with salt and dairy fat),0.97,2.69,1.41,0.48,2.06
+Potatoes (with salt),0.37,2.47,1.07,0.34,1.03
+Potatoes (with sauce),0.75,2.33,0.74,0.45,2.4
+Potatoes (without salt),0.25,0.32,1.22,0.48,0.33
+Pound or yogurt cake,0.19,0.85,3.87,0.21,2.55
+Provolone (cheese),0.5,4.8,0.47,1.27,5.67
+Prunes (dried fruit),1.68,0.1,3.15,1.03,0.45
+Quail (broiled),0.43,2.27,0,0.33,1.7
+Soft cheese (Faisselle. plain),2.23,1.4,0,0.63,1.43
+Soft cheese (Faisselle. with sugar),2.36,0.28,3.06,0.4,1.9
+Soft cheese (fromage blanc. flavoured or with fruits),2.11,0.07,2.87,0.75,2.03
+Soft cheese (fromage blanc. light. with sugar),1.82,0.08,3.12,0.28,2.73
+Soft cheese (fromage blanc. with sugar),1.71,0.05,3.12,0.57,1.73
+Quiches,0.88,3.19,0.74,0.5,2.84
+Quinoa or similar,2.1,2.55,0.85,1.1,1.55
+Rabbit (in gravy),1.25,2.74,0.28,1.05,1.9
+Rabbit (roast),1.07,1.93,0.37,0.7,1.43
+Raclette (cheese),0.33,3.85,0.42,0.33,3.75
+Radish (plain),0.83,0.37,0.55,0.95,0.27
+Radish (with salt and butter),0.77,3.99,0.27,1.48,3.26
+Radish (with salt),1.39,3.01,0.19,0.65,0.24
+Raspberry,2.49,0.08,2.2,0.36,0.09
+Raspberry (fresh fruit. with whipped cream),2.55,0,1.55,0.45,1.45
+Raspberry (jam),3,0.9,6,0.8,1.6
+Raspberry type cake,1.37,0.03,3.43,0.4,2.93
+Raviolis. ravioles. tortellini,1.64,2.48,1.38,0.18,2.69
+Reblochon (cheese),0.25,3,0.23,0.73,4.05
+Red cabbage (with vinaigrette),1.8,1.97,0.22,1.18,1.42
+Red mullet (with lemon juice),1.83,2.93,0,0.83,1.13
+Red mullet (without lemon juice),0.8,4.9,0.8,1.9,1.7
+Redcurrant (fresh fruit),5.8,0.05,1,0.55,0.15
+Redcurrant (juice),4.8,0.1,1.4,1.7,0.1
+Rhubarb (jam),1.6,0,5.8,0,3
+Rhubarb (stewed),3.9,0.05,1.75,0.55,0.05
+Rice pudding,0.48,0.1,3.57,0.26,2.48
+Rillettes (fish),1.55,4.32,0.6,0.73,4.4
+Rillettes (pork or duck),1.23,3.16,0.39,0.87,3.86
+Risotto,1,2.86,0.8,0.76,2.58
+Roasted and salted peanuts,0.45,4.35,0.7,0.75,2.43
+Rondelé (cheese),1.3,3.23,0.6,1.1,2.73
+Roquefort (cheese),1.74,4.13,0.13,2.24,3.47
+Rusk (whith butter and jam),0,4.3,5,0,4.1
+Rusk (whith butter),0,1.4,0,0.7,2.2
+Rusk (with jam),1.1,1,4.7,1.17,0.77
+Rusk (with Nutella® spread),0,0.75,5.25,0,2.3
+Rye bread (with butter),0.95,0.75,1.7,0.6,4.7
+Rye bread (without butter),0.6,1.8,1.45,0.8,0.2
+Saint-Agur (cheese),2.8,4.8,0,2.5,5.3
+Saint-Agur (chesse. with bread),3.4,4.2,1,2.5,4.5
+Saint-Félicien (cheese),1.15,3.52,0.45,1.23,4.98
+Saint-Marcelin (cheese),1.33,3.15,0.5,1.97,4.02
+Saint-Moret (cheese),0,3.9,0,1,3.75
+Saint-Moret (cheese. with bread),1.43,2.9,0.7,0.6,3.43
+Saint-Paulin (cheese),0.28,2.55,0.88,0.2,3
+Salad (different from frisée salad. with vinaigrette),2.07,2.05,0.28,0.84,1.78
+Salmon (boiled. steamed or in tinfoil),1.31,3.1,0.87,0.33,2.21
+Salmon (grilled),1.54,3.14,0.89,0,3.19
+Salmon (smoked),0.82,4.15,0.95,0.45,3.82
+Salsify,1.54,2.62,0.93,0.85,1.8
+Salted butter caramel,0.78,1.82,5.6,0.62,2.84
+Salted cake,0.93,2.76,0.48,0.61,2.38
+Salted pies,1.31,3.61,0.98,0.43,2.59
+Samos® (cheese),1.7,2.8,0.8,0.2,3.1
+Samosas,0.07,2.33,0.7,0.23,3.03
+Sandwich with cold cuts,1.13,2.36,0.7,0.77,2.42
+Sangria-type cocktail,2.51,0,3.8,0.2,0
+Sardines (canned),0.82,3.57,0.36,1.01,3.88
+Sardines (canned. with lemon juice),4.64,3.68,0,0,5
+Sardines (grilled),1.6,3.47,0.37,0.5,3.07
+Sauerkraut,2.45,3.96,0.4,1.24,3.45
+Scallops,1.27,2.97,0.9,0.43,2.2
+Scallops (sautéed),0.83,3.12,0.96,0.42,2.51
+Semolina,0.78,2.43,0.65,0.61,1.39
+Semolina pudding,0.26,0.04,2.66,0.2,1.46
+Shepherd's pie,0.73,3.29,0.6,0.36,2.7
+Shortbread or flaky cookies,0.35,1.27,4.38,0.24,1.56
+"Shrimp, prawns, Norway lobsters (with mayonnaise)",1.04,2.92,0.62,0.56,1.63
+Smoked ham,0.94,3.6,0.12,0.86,2.42
+Snails,0.4,2,0,0.9,4
+Soft boiled eggs,0.45,2.3,1.3,0.15,2.35
+Sole (grilled),1.05,1.8,0.25,0.9,0.85
+Sole (grilled. with lemon juice),3.67,1.33,0.4,1.5,1.67
+Sour fruit candy,9.25,0,5.4,1.8,0.4
+Sourdough bread (with butter),0.7,2.6,0.8,0.8,2.1
+Sourdough bread (without butter),1.07,1.83,0.93,0.27,0.47
+Soy sprouts (with soy sauce),1.97,3.67,0.97,0.27,0
+Sparkling water (plain),0.2,1.38,0.13,0.43,0
+Sparkling water (with lemon juice),3.7,0.65,0.08,1,0
+Sparkling wine (Mousseux),1.64,0.1,1.21,0.61,0.16
+Spinach with cream,1.17,2.37,0.56,1.31,1.57
+Spread (with bread),1.2,0.83,5.5,0.6,3.93
+Spring rolls,1.68,3.4,1.21,0.18,3.94
+Squid,0.6,2.4,0.6,0.87,2.57
+Stew (Potée. Pot au feu),0,3.7,1.2,0,1.7
+Stewed vegetables (Ratatouille),1.61,2.87,1.16,1.29,1.43
+Sticks and pretzels,0.44,3.15,0.76,0.33,1.15
+Strawberry (fresh fruit. plain),1.41,0.04,2.12,0.13,0.03
+Strawberry (fresh fruit. with cream and sugar),1.33,0,3.76,0.3,1.76
+Strawberry (fresh fruit. with lemon juice),4.2,0,4.1,0,0
+Strawberry (fresh fruit. with sugar),1.96,0.04,3.42,0.69,0.26
+Strawberry (jam),1.8,0.4,7.4,0.8,1.9
+Strawberry (juice),1.8,0.5,6.2,0.3,0.9
+"Strong lager (Belgian beers, Abbey beers, etc.)",4.08,0.02,0.32,3.88,0.28
+Stuffed chicken (Paupiettes de volaille),1.1,4.3,0.6,0.3,5.3
+Stuffed salty pancake,0.75,3.39,0.98,0.51,3.17
+Stuffed puff pastries (Feuilletés fourrés),1.09,3.65,0.83,1.16,4.15
+Stuffed Tomatoes,1.94,3.18,0.92,0.37,2.71
+Stuffed veal (Paupiettes de veau),0.59,3.55,0.24,0.41,2.7
+Stuffed zucchini,0,3.8,1.5,0.9,2.9
+Surimi (with mayonnaise),1.64,3.84,1.32,0,3.02
+Sweet cookies with chocolate,0.43,0.41,4.12,0.48,2.29
+Sweet cookies with fruits,1.22,0.35,4.25,0.75,1.3
+Sweet corn (plain),0.28,0.62,1.35,0.23,0.48
+Sweet corn (with mayonnaise),0.65,2.45,1,0.4,2.2
+Sweet corn (with vinaigrette),1.74,2.52,2.04,0.76,2.22
+Sweet flaky cookies,1.45,0,2.7,0.9,1.2
+Sweet pancake (plain),0,0,1.1,0,3.3
+Sweet pancake (with chocolate or Nutella® spread),0.12,0.52,5.42,0.26,4.1
+Sweet pancake (with honey or maple syrup),0,0.5,4.77,0,3.27
+Sweet pancake (with jam),1.02,0.62,5.18,0.26,1.96
+Sweet pancake (with marmalade of bitter orange),1.8,0.9,2.2,2.9,3
+Sweet pancake (with stewed fruits),0.1,0.1,2.1,0.2,0.5
+Sweet pancake (with sugar),0.11,0.19,3.37,0.1,2.04
+"Sweet wines (Sauternes, Monbazillac, Jurançon, etc.)",2.61,0.04,4,0.33,0.01
+Syrup with water or sparkling water,0.79,0.1,3.81,0.89,0.36
+Taboulé,1.64,2.79,1.32,0.92,1.91
+Tapenade,1.3,4.23,0.8,1.5,3.23
+Tarama,0,2,1.85,0.2,3.75
+Tartare® (cheese),0.96,2.56,0.2,0.14,3.78
+Tartiflette (type of potato gratin),0.61,4.11,0.71,0.13,4.36
+Tea (flavoured. with sugar),0.66,0.07,3.63,1.18,0.13
+Tea (flavoured. without sugar),1.3,0.06,0.21,2.35,0.18
+Tea (plain),0.96,0.08,0.13,2.9,0.07
+Tea (plain. with sugar or honey),0.01,0.01,2.66,1.2,0.07
+Tiramisu,1.01,0.17,3.47,1.21,4.8
+Toast (with butter and jam),0.75,0.7,3.5,0.4,2.85
+Toast (with butter),0.5,2.3,0.65,0.4,2
+Toast (with jam),0,1.8,3.4,0,0
+Toast of foie gras,0.93,3.4,1.23,0.3,4.03
+Tomato (cooked),1.88,1.98,1.12,0.68,0.92
+Tomato (plain),1.94,0.38,1.03,0.32,0.28
+Tomato (soup),2.57,3.65,0.75,0.78,1.99
+Tomato (with mayonnaise),2.27,2.83,0.97,1.03,2.5
+Tomato (with salt and olive oil),1.25,2.65,0.65,0,1.9
+Tomato (with salt),1.87,2.87,1.13,0.43,0.27
+Tomato (with salt. olive oil and Mozzarella),1.4,2.4,1,0.4,1.1
+Tomato (with vinaigrette and Mozzarella),3.3,3.8,2.15,0.75,2.3
+Tomato (with vinaigrette),2.48,2.07,1.3,0.79,1.93
+Tomme de brebis (cheese),0.14,3.46,0.48,1.08,3.24
+Tomme de vache (cheese),0.53,3.63,0.63,1.23,3.29
+Toulouse sausage,1.6,3.8,0.21,1.01,3.19
+"Tripe, tripoux",0.3,2.4,1,0.2,2
+Trout (grilled or fried),1.5,2.73,0.15,0.96,1.6
+Tuna (canned. with vinaigrette or mayonnaise),1.13,2.47,0.38,0.71,1.58
+Turkey (in gravy),1.42,2.6,0.53,0.93,2.72
+Turkey (roast or grilled),0.93,3.65,0.94,0.33,2.95
+Turkey or chicken ham,0.93,3.63,1.3,0.63,2.23
+Vache-qui-rit® (cheese),0.83,2.89,0.68,0.29,3.33
+Vacherin (cheese with bread),0.9,3,0.45,2.55,4.25
+Vanilla custard,0.36,0.11,3.56,0.24,2.11
+Vegetable gratin,0.93,1.77,0.8,0.97,1.1
+Vol-au-vent,1.6,2.58,0.25,0.78,2.13
+Waffle,0.5,0.5,2.7,0.6,1.9
+Waffle (with jam or Nutella® spread),2.3,0,4.2,0,3.05
+Walnut (dried fruit),0.55,0.2,1.07,1.6,2.6
+Walnut bread,0.8,2.4,0.8,1.8,2.1
+Wheat (Ebly®),1.21,2.87,0.91,0.53,2.47
+Whisky,0.85,0.05,0.8,0.5,0.5
+White bread (plain),0.35,1.78,0.85,0.28,0.26
+White bread (with butter and honey),0.7,2.15,5.55,0.6,2.4
+White bread (with butter),1.02,2.18,1.44,0.64,2.68
+White bread (with jam),1.43,0.8,3.53,0.48,1.48
+White bread (with Nutella® spread),0,0.5,4.78,0,4.68
+White chocolate,0.47,0.03,5.37,0.37,5.83
+White rice (plain),0.2,0.22,1.3,0.28,1.08
+White rice (with curry sauce),0.38,2.66,0.8,0.44,1.74
+White rice (with salt and fat),0.34,3,0.54,0.22,2.23
+White rice (with salt),0.48,1.92,0.58,0.46,0.86
+White rice (with tomato sauce),0.89,1.94,0.89,0.36,1.44
+White sandwich bread (plain),0.5,1.7,1.3,0.3,0.3
+White sandwich bread (with chocolate or Nutella® spread),1.7,0.3,5.7,0.9,4
+White sandwich bread (with dairy fat),0,0,1.8,0,2.8
+White sandwich bread (with jam or honey and dairy fat),1.1,0.85,4.2,0,4.05
+White sandwich bread (with jam or honey),1.2,0.75,2.15,0.55,0.5
+White sausage,0.47,3.1,1.27,0.6,3.07
+Whiting (grilled),2,2.74,0.5,0.78,1.88
+Whiting (steamed. boiled in broth. or in tinfoil),1.6,2.45,0,0.75,1.6
+Whiting (with sauce),0.8,2.2,0.05,0.6,1.65
+Whole-grain bread (plain),0.56,2,0.94,0.63,0.71
+Whole-grain bread (with butter),0.23,2.6,0.7,0.18,4.4
+Whole-grain bread (with jam),1.9,1.7,4,1.1,2.3
+Whole wheat bread (plain),0.4,1.78,0.68,0.3,0.36
+Whole wheat bread (with butter),0.5,2.1,0.8,0.4,1.1
+Whole wheat bread (with jam),0.8,0.1,4.4,1.6,0.2
+Whole wheat sandwich bread (with Nutella® spread),1.1,1.1,5.6,1.1,5.9
+Wine (red),2.7,0.05,0.65,0.91,0.2
+Wine (Rosé),2.35,0.03,1.64,0.57,0.06
+Wine (white),2.55,0.09,1.11,0.83,0.14
+Yogurt (flavoured or with fruit),1.87,0.08,3.44,0.27,1.95
+"Yogurt (light, flavoured or with fruit)",1.76,0.15,2.91,0.59,1.8
+"Yogurt (light, plain. with sugar)",1.88,0.1,2.22,0.15,2.22
+"Yogurt (plain, with sugar or jam)",2.47,0.05,3.3,0.27,1.95
+"Yogurt (plain, without sugar)",4.13,0.03,0,0.46,1.37
+Yogurt drink flavoured or with fruit,1.65,0.03,3.82,0.5,1.98
+Zander,0.5,2.5,0,0.1,1.8
+Zucchini,0.98,2.7,0.98,0.91,1.39

@@ -6,16 +6,16 @@ package algorithm;
 public class ModificationParams {
 
     private ModificationType sourness = null;
-    private ModificationType spiciness = null;
+    private ModificationType saltiness = null;
     private ModificationType sweetness = null;
     private ModificationType bitterness = null;
     private ModificationType fattiness = null;
 
     public ModificationParams(){}
 
-    public ModificationParams(ModificationType sourness, ModificationType spiciness, ModificationType sweetness, ModificationType bitterness, ModificationType fattiness){
+    public ModificationParams(ModificationType sourness, ModificationType saltiness, ModificationType sweetness, ModificationType bitterness, ModificationType fattiness){
         this.sourness = sourness;
-        this.spiciness = spiciness;
+        this.saltiness = saltiness;
         this.sweetness = sweetness;
         this.bitterness = bitterness;
         this.fattiness = fattiness;
@@ -26,11 +26,11 @@ public class ModificationParams {
     public void setSourness(ModificationType sourness) {
         this.sourness = sourness;
     }
-    public ModificationType spiciness() {
-        return spiciness;
+    public ModificationType saltiness() {
+        return saltiness;
     }
-    public void setSpiciness(ModificationType spiciness) {
-        this.spiciness = spiciness;
+    public void setSaltiness(ModificationType saltiness) {
+        this.saltiness = saltiness;
     }
     public ModificationType sweetness() {
         return sweetness;
@@ -52,6 +52,6 @@ public class ModificationParams {
     }
 
     public boolean isNull(){
-        return (sourness==null&&spiciness==null&&sweetness==null&&bitterness==null&&fattiness==null);
+        return (sourness==null&&saltiness==null&&sweetness==null&&bitterness==null&&fattiness==null);
     }
 }

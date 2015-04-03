@@ -311,10 +311,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     public ArrayList<Song> getRecommendation(String mood){
-        Preference moodpref = MainActivity.table.getMood(mood).preference();
+        Preference moodpref = null;//MainActivity.table.getMood(mood).preference();
         Cursor cursor = null;
         ArrayList<Song> songList = null;
-        double rval = PrefRangeValue(MainActivity.table.getMood(mood).range_counter);
+        double rval = 0;//PrefRangeValue(MainActivity.table.getMood(mood).range_counter);
         int song_count = 0;
 
         while(song_count == 0) {
