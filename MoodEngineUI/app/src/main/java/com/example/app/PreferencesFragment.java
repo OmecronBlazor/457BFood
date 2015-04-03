@@ -48,25 +48,7 @@ public class PreferencesFragment extends Fragment {
                     int moodID = MainActivity.dbhandler.addMood(mood);
                     MainActivity.table.getMood(mood.mood_name()).setID(moodID);
                 }
-                Cursor mCursor = getActivity().getContentResolver().query(
-                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                        new String[] {MediaStore.Audio.Media._ID, MediaStore.Audio.Media.TITLE, MediaStore.Audio.Media.ARTIST, MediaStore.Audio.Media.DURATION},
-                        MediaStore.Audio.Media.IS_MUSIC + " == 1",
-                        null,
-                        MediaStore.Audio.Media._ID + " ASC");
                 //Deal with connection
-                ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo ni = cm.getActiveNetworkInfo();
-
-                boolean localConnection = false;
-                boolean mobileConnection = false;
-                if(ni!=null) {
-                    boolean isWiFi = ni.getType() == ConnectivityManager.TYPE_WIFI;
-                    boolean isMobile = ni.getType() == ConnectivityManager.TYPE_MOBILE;
-                    boolean isETH = ni.getType() == ConnectivityManager.TYPE_ETHERNET;
-                    localConnection = isWiFi||isETH;
-                    mobileConnection = isMobile;
-                }
 
 
                 //Adds songs to DB on a second thread, this will create another thread to analyze songs as well
