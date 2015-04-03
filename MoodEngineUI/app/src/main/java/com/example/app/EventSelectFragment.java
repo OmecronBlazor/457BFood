@@ -9,17 +9,15 @@ import android.widget.GridView;
 
 import java.util.List;
 
+import algorithm.EventElement;
 import algorithm.MoodElement;
 
 /**
  * Created by Steven on 24/07/14.
  */
 public class EventSelectFragment extends Fragment {
-    private List<MoodElement> moods;
 
-    public EventSelectFragment() {
-        moods = MainActivity.dbhandler.getAllMoods();
-    }
+    public EventSelectFragment() {}
 
     @Override
     public void onStop() {

@@ -6,7 +6,7 @@ public class Preference {
     private final double UPPER_BOUND = 10.0;
 
     private double sourness;
-    private double spiciness;
+    private double saltiness;
     private double sweetness;
     private double bitterness;
     private double fattiness;
@@ -15,10 +15,10 @@ public class Preference {
     private double tempo;
     private double complexity;
 
-    public Preference( double sweetness, double spiciness, double sourness, double bitterness, double fattiness)
+    public Preference( double sourness, double saltiness, double sweetness, double bitterness, double fattiness)
     {
         this.sweetness = sweetness;
-        this.spiciness = spiciness;
+        this.saltiness = saltiness;
         this.sourness = sourness;
         this.bitterness = bitterness;
         this.fattiness = fattiness;
@@ -41,14 +41,14 @@ public class Preference {
         if( this.sweetness > UPPER_BOUND ) this.sweetness = 10;
     }
 
-    public double spiciness() { return spiciness; }
+    public double saltiness() { return saltiness; }
 
-    public void SetSpiciness( double spiciness )
+    public void SetSaltiness( double saltiness )
     {
-        this.spiciness = spiciness;
+        this.saltiness = saltiness;
 
-        if( this.spiciness < LOWER_BOUND ) this.spiciness = 1;
-        if( this.spiciness > UPPER_BOUND ) this.spiciness = 10;
+        if( this.saltiness < LOWER_BOUND ) this.saltiness = 1;
+        if( this.saltiness > UPPER_BOUND ) this.saltiness = 10;
     }
 
     public double sourness() { return sourness; }

@@ -25,10 +25,13 @@ import java.io.File;
 import java.util.List;
 
 import algorithm.AsyncSyncProcess;
+import algorithm.CSVReader;
 import algorithm.DatabaseHandler;
 import algorithm.EventDatabaseHandler;
 import algorithm.EventElement;
 import algorithm.EventTable;
+import algorithm.Food;
+import algorithm.FoodDataReader;
 import algorithm.MoodElement;
 import algorithm.MoodTable;
 import algorithm.Preference;
@@ -45,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
     public static boolean Uploadflag = true;
     public static String groovesharkSessionID = null;
     public static String groovesharkCountryID = null;
-    public static final String PREFS_NAME = "MoodEnginePreferences";
+    public static final String PREFS_NAME = "FoodEnginePreferences";
     public static SharedPreferences settings;
 
     @Override
@@ -67,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
                             System.out.println(get.id());
                             System.out.println(get.event_name());
                             System.out.println(get.sourness());
-                            System.out.println(get.spiciness());
+                            System.out.println(get.saltiness());
                             System.out.println(get.sweetness());
                             System.out.println(get.bitterness());
                             System.out.println(get.fattiness());
@@ -93,6 +96,8 @@ public class MainActivity extends ActionBarActivity {
                     }
                 } else {
                     //create DB
+                    FoodDataReader reader = new FoodDataReader();
+                    List<Food> foodList = reader.readFoodData(getApplicationContext(), "food_data.csv");
                     dbhandler = new EventDatabaseHandler(getApplicationContext());
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.container, new PreferencesFragment())

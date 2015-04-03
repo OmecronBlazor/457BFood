@@ -10,11 +10,11 @@ public class Food {
     private final double USER_INFLUENCE = 0.95;
     private String name = "";
 
-    public Food( int id, String name, double sourness, double spiciness, double sweetness, double bitterness, double fattiness, int food_counter){
+    public Food( int id, String name, double sourness, double saltiness, double sweetness, double bitterness, double fattiness, int food_counter){
 
         this.id = id;
         this.name = name;
-        this.food_preference = new Preference( sourness, spiciness, sweetness, bitterness, fattiness );
+        this.food_preference = new Preference( sourness, saltiness, sweetness, bitterness, fattiness );
         this.food_counter = food_counter;
     }
 
@@ -24,10 +24,10 @@ public class Food {
         this.name = name;
     }
 
-    public Food( String name, double sourness, double spiciness, double sweetness, double bitterness, double fattiness, int food_counter){
+    public Food( String name, double sourness, double saltiness, double sweetness, double bitterness, double fattiness, int food_counter){
 
         this.name = name;
-        this.food_preference = new Preference( sourness, spiciness, sweetness, bitterness, fattiness );
+        this.food_preference = new Preference( sourness, saltiness, sweetness, bitterness, fattiness );
     }
 
     public Preference preference(){ return food_preference; }
@@ -44,9 +44,9 @@ public class Food {
 
     public void setSourness( double sourness) { this.food_preference.SetSourness(sourness); }
 
-    public double spiciness(){ return food_preference.spiciness(); }
+    public double saltiness(){ return food_preference.saltiness(); }
 
-    public void setSpiciness( double spiciness) { this.food_preference.SetSpiciness(spiciness); }
+    public void setSaltiness( double saltiness) { this.food_preference.SetSaltiness(saltiness); }
 
     public double sweetness(){ return food_preference.sweetness(); }
 
@@ -70,12 +70,12 @@ public class Food {
         food_counter++;
     }
 
-    public void UpdateSpiciness( double user_spiciness, ModificationType mod_type, int user_counter )
+    public void UpdateSaltiness( double user_saltiness, ModificationType mod_type, int user_counter )
     {
-        double spiciness;
+        double saltiness;
 
-        spiciness = spiciness() + UserToFoodInfluenceFactor( user_counter, spiciness(), user_spiciness, mod_type );
-        food_preference.SetSpiciness( spiciness );
+        saltiness = saltiness() + UserToFoodInfluenceFactor( user_counter, saltiness(), user_saltiness, mod_type );
+        food_preference.SetSaltiness( saltiness );
 
         food_counter++;
     }

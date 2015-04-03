@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import algorithm.AsyncDBAddsongs;
+import algorithm.EventTable;
 import algorithm.MoodElement;
 import algorithm.MoodTable;
 import algorithm.Preference;
@@ -43,16 +44,15 @@ public class PreferencesFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.userpref = new Preference(heavinessSeekbar.getProgress(),tempoSeekbar.getProgress(),complexitySeekbar.getProgress());
-                MainActivity.table = new MoodTable( MainActivity.userpref );
-                for(MoodElement mood : MainActivity.table.getAllMoods()) {
+                MainActivity.table = new EventTable( MainActivity.userpref );
+                /*for(MoodElement mood : MainActivity.table.getAllMoods()) {
                     int moodID = MainActivity.dbhandler.addMood(mood);
-                    MainActivity.table.getMood(mood.mood_name()).setID(moodID);
-                }
+                    MainActivity.table.getMood(mood.mood_name()).setID(moodID);*/
                 //Deal with connection
 
 
                 //Adds songs to DB on a second thread, this will create another thread to analyze songs as well
-                AsyncDBAddsongs addSongs = new AsyncDBAddsongs(mCursor, getActivity().getContentResolver(), localConnection, mobileConnection);
+                /*AsyncDBAddsongs addSongs = new AsyncDBAddsongs(mCursor, getActivity().getContentResolver(), localConnection, mobileConnection);
                 if (Build.VERSION.SDK_INT >= 11) {
                     //--post GB use serial executor by default --
                     addSongs.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -60,7 +60,7 @@ public class PreferencesFragment extends Fragment {
                     addSongs.execute();
                 }
 
-                ((MainActivity) v.getContext()).switchToFragment(new EventSelectFragment(), false);
+                ((MainActivity) v.getContext()).switchToFragment(new EventSelectFragment(), false);*/
             }
         });
         return rootView;

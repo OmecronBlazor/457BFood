@@ -20,18 +20,18 @@ public enum EventType{
     private final String event_name;
     private final String event_colour;
     private final double sourness_factor;
-    private final double spiciness_factor;
+    private final double saltiness_factor;
     private final double sweetness_factor;
     private final double bitterness_factor;
     private final double fattiness_factor;
 
-    EventType( double sourness_factor, double spiciness_factor, double sweetness_factor, double bitterness_factor,
+    EventType( double sourness_factor, double saltiness_factor, double sweetness_factor, double bitterness_factor,
                double fattiness_factor, String event_colour, String event_name )
     {
         this.event_name = event_name;
         this.event_colour = event_colour;
         this.sourness_factor = sourness_factor;
-        this.spiciness_factor = spiciness_factor;
+        this.saltiness_factor = saltiness_factor;
         this.sweetness_factor = sweetness_factor;
         this.bitterness_factor = bitterness_factor;
         this.fattiness_factor = fattiness_factor;
@@ -40,7 +40,7 @@ public enum EventType{
     public final String event_name(){ return event_name; }
     public final String event_colour(){ return event_colour; }
     public final double sourness_factor(){ return sourness_factor; }
-    public final double spiciness_factor(){ return spiciness_factor; }
+    public final double saltiness_factor(){ return saltiness_factor; }
     public final double sweetness_factor(){ return sweetness_factor; }
     public final double bitterness_factor(){ return bitterness_factor; }
     public final double fattiness_factor(){ return fattiness_factor; }

@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class EventElement {
 
     public int modification_counter_sour = 0;
-    public int modification_counter_spicy = 0;
+    public int modification_counter_salty = 0;
     public int modification_counter_sweet = 0;
     public int modification_counter_bitter = 0;
     public int modification_counter_fatty = 0;
@@ -31,12 +31,12 @@ public class EventElement {
         event_name = event_type.event_name();
         event_colour = event_type.event_colour();
         double sourness = preference.sourness() + event_type.sourness_factor();
-        double spiciness = preference.spiciness() + event_type.spiciness_factor();
+        double saltiness = preference.saltiness() + event_type.saltiness_factor();
         double sweetness = preference.sweetness() + event_type.sweetness_factor();
         double bitterness = preference.bitterness() + event_type.bitterness_factor();
         double fattiness = preference.fattiness() + event_type.fattiness_factor();
 
-        EventElementPreference = new Preference( sourness, spiciness, sweetness, bitterness, fattiness );
+        EventElementPreference = new Preference( sourness, saltiness, sweetness, bitterness, fattiness );
 
         event_position = position;
     }
@@ -56,7 +56,7 @@ public class EventElement {
         event_name = name;
         EventElementPreference = preference;
         modification_counter_sour = mod_counter_sour;
-        modification_counter_spicy = mod_counter_spicy;
+        modification_counter_salty = mod_counter_spicy;
         modification_counter_sweet = mod_counter_sweet;
         modification_counter_bitter = mod_counter_bitter;
         modification_counter_fatty = mod_counter_fatty;
@@ -89,23 +89,23 @@ public class EventElement {
         return sourness_factor;
     }
 
-    public double spiciness(){ return EventElementPreference.spiciness(); }
+    public double saltiness(){ return EventElementPreference.saltiness(); }
 
-    public double UpdateSpiciness( Food food, ModificationType mod_type)
+    public double UpdateSaltiness( Food food, ModificationType mod_type)
     {
-        double spiciness;
-        double food_spiciness = food.spiciness();
-        double spiciness_factor = FoodToUserInfluenceFactor( modification_counter_spicy, spiciness(), food_spiciness, mod_type );
+        double saltiness;
+        double food_saltiness = food.saltiness();
+        double saltiness_factor = FoodToUserInfluenceFactor( modification_counter_salty, saltiness(), food_saltiness, mod_type );
 
-        spiciness = spiciness() + spiciness_factor;
+        saltiness = saltiness() + saltiness_factor;
 
-        food.UpdateSpiciness( spiciness(), mod_type, modification_counter_spicy );
+        food.UpdateSaltiness( saltiness(), mod_type, modification_counter_salty );
 
-        EventElementPreference.SetSpiciness( spiciness );
+        EventElementPreference.SetSaltiness( saltiness );
 
-        modification_counter_spicy++;
+        modification_counter_salty++;
 
-        return spiciness_factor;
+        return saltiness_factor;
     }
 
 
@@ -175,22 +175,22 @@ public class EventElement {
 
     public int event_position(){ return event_position; }
 
-    public void UpdateAllPreferences(Food food, ModificationType mod_sourness, ModificationType mod_spiciness,
+    public void UpdateAllPreferences(Food food, ModificationType mod_sourness, ModificationType mod_saltiness,
                                      ModificationType mod_sweetness, ModificationType mod_bitterness, ModificationType mod_fattiness)
     {
         double sourness_factor = UpdateSourness(food, mod_sourness);
-        double spiciness_factor = UpdateSpiciness(food, mod_spiciness);
+        double saltiness_factor = UpdateSaltiness(food, mod_saltiness);
         double sweetness_factor = UpdateSweetness(food, mod_sweetness);
         double bitterness_factor = UpdateBitterness(food, mod_bitterness);
         double fattiness_factor = UpdateFattiness(food, mod_fattiness);
 
-        boolean isPerfect = mod_sourness == ModificationType.PERFECT && mod_spiciness == ModificationType.PERFECT && mod_sweetness == ModificationType.PERFECT
+        boolean isPerfect = mod_sourness == ModificationType.PERFECT && mod_saltiness == ModificationType.PERFECT && mod_sweetness == ModificationType.PERFECT
                             && mod_sweetness == ModificationType.PERFECT && mod_bitterness == ModificationType.PERFECT && mod_fattiness == ModificationType.PERFECT;
 
         if(isPerfect)
             range_counter++;
 
-        /*AsyncTabuMod async_update = new AsyncTabuMod( this, sourness_factor, spiciness_factor, sweetness_factor, bitterness_factor, fattiness_factor );
+        /*AsyncTabuMod async_update = new AsyncTabuMod( this, sourness_factor, saltiness_factor, sweetness_factor, bitterness_factor, fattiness_factor );
         if (Build.VERSION.SDK_INT >= 11) {
             //--post GB use serial executor by default --
             async_update.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);

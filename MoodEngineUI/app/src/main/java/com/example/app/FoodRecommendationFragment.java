@@ -27,6 +27,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import algorithm.EventElement;
+import algorithm.Food;
 import algorithm.ModificationParams;
 import algorithm.ModificationType;
 import algorithm.MoodElement;
@@ -41,9 +43,9 @@ public class FoodRecommendationFragment extends Fragment {
     private TextView mArtistTextView;
     private ImageButton mUrlButton;
     private ControllerView mControllerView;
-    private MoodElement mMood;
+    private EventElement mEvent;
     private int songIter = 0;
-    public static ArrayList<Song> mExternalSongList;
+    public static ArrayList<Food> mExternalFoodList;
     public FoodRecommendationFragment thisFragment;
     protected Dialog dialog;
     private final String FEEDBACK = "Feedback";
@@ -55,11 +57,11 @@ public class FoodRecommendationFragment extends Fragment {
 
     public FoodRecommendationFragment(){}
 
-    public FoodRecommendationFragment(ArrayList<Song> songList, MoodElement mood) {
-        this.mMood = mood;
-        this.mExternalSongList = songList;
+    public FoodRecommendationFragment(ArrayList<Food> foodList, EventElement event) {
+        this.mEvent = event;
+        this.mExternalFoodList = foodList;
         this.thisFragment = this;
-        for(int x=0;x<songList.size();x++) {
+        for(int x=0;x<foodList.size();x++) {
             ModificationParams newone = new ModificationParams();
             this.assessmentList.add(newone);
         }
@@ -71,7 +73,7 @@ public class FoodRecommendationFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         mMenu = menu;
         this.mAssessmentItem = this.mMenu.findItem(R.id.action_feedback);
-        updateUIFor(mExternalSongList.get(songIter));
+        //updateUIFor(mExternalFoodList.get(songIter));
     }
 
     @Override
@@ -102,7 +104,7 @@ public class FoodRecommendationFragment extends Fragment {
         mTitleTextView = (TextView) rootView.findViewById(R.id.title_text_view);
         mArtistTextView = (TextView) rootView.findViewById(R.id.artist_text_view);
         mUrlButton = (ImageButton) rootView.findViewById(R.id.url_link_button);
-        ((MainActivity) getActivity()).setActionBarTitle(mMood.mood_name());
+        ((MainActivity) getActivity()).setActionBarTitle(mEvent.event_name());
 
         mControllerView.setAnchorView((FrameLayout) rootView.findViewById(R.id.controller_view_container));
         mControllerView.setUpForExternalPlayer();
@@ -110,15 +112,15 @@ public class FoodRecommendationFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(!assessmentList.get(songIter).isNull()) {
-                            updatePreferences(mMood,mExternalSongList.get(songIter),
+                        if (!assessmentList.get(songIter).isNull()) {
+                            /*updatePreferences(mMood,mExternalSongList.get(songIter),
                                     assessmentList.get(songIter).getH().mod_name(),
                                     assessmentList.get(songIter).getT().mod_name(),
-                                    assessmentList.get(songIter).getC().mod_name());
-                            if (songIter == mExternalSongList.size() - 1) {
+                                    assessmentList.get(songIter).getC().mod_name());*/
+                            if (songIter == mExternalFoodList.size() - 1) {
                                 ConnectivityManager cm = (ConnectivityManager) getView().getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                                 NetworkInfo ni = cm.getActiveNetworkInfo();
-                                if(ni!=null) {
+                                if (ni != null) {
                                     if (ni.isConnected()) {
                                         songIter++;
                                         ProgressDialog progress = new ProgressDialog(thisFragment.getView().getContext());
@@ -126,14 +128,12 @@ public class FoodRecommendationFragment extends Fragment {
                                         progress.setMessage("Getting a recommendation from internet...");
                                         progress.show();
                                         //GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
-                                    }
-                                    else{
+                                    } else {
                                         Toast toast = Toast.makeText(getView().getContext(), "Can't get more recommendations without a network connection.", Toast.LENGTH_LONG);
                                         toast.setGravity(Gravity.CENTER, 0, 50);
                                         toast.show();
                                     }
-                                }
-                                else{
+                                } else {
                                     Toast toast = Toast.makeText(getView().getContext(), "Can't get more recommendations without a network connection.", Toast.LENGTH_LONG);
                                     toast.setGravity(Gravity.CENTER, 0, 50);
                                     toast.show();
@@ -141,10 +141,9 @@ public class FoodRecommendationFragment extends Fragment {
                             } else {
                                 songIter++;
                                 //setURL
-                                updateUIFor(mExternalSongList.get(songIter));
+                                //updateUIFor(mExternalFoodList.get(songIter));
                             }
-                        }
-                        else{
+                        } else {
                             showPreferenceSelectionDialog(true);
                         }
                     }
@@ -152,7 +151,7 @@ public class FoodRecommendationFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(songIter == 0){
+                        if (songIter == 0) {
                             Toast toast = Toast.makeText(thisFragment.getView().getContext(), "This is the start of the playlist.", Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
@@ -160,8 +159,8 @@ public class FoodRecommendationFragment extends Fragment {
                         }
                         songIter--;
                         //setURL
-                        updateUIFor(mExternalSongList.get(songIter));
-                        System.out.println(mExternalSongList.get(songIter).name());
+                        //updateUIFor(mExternalFoodList.get(songIter));
+                        //System.out.println(mExternalFoodList.get(songIter).name());
                         //setText
                     }
                 }
@@ -178,9 +177,9 @@ public class FoodRecommendationFragment extends Fragment {
         BarGraphView tempoBarGraph = (BarGraphView) dialog.findViewById(R.id.tempo_bar_graph);
         BarGraphView complexityBarGraph = (BarGraphView) dialog.findViewById(R.id.complexity_bar_graph);
 
-        heavinessBarGraph.setBarValue(mExternalSongList.get(songIter).heaviness());
-        tempoBarGraph.setBarValue(mExternalSongList.get(songIter).tempo());
-        complexityBarGraph.setBarValue(mExternalSongList.get(songIter).complexity());
+        //heavinessBarGraph.setBarValue(mExternalFoodList.get(songIter).heaviness());
+        //tempoBarGraph.setBarValue(mExternalFoodList.get(songIter).tempo());
+        //complexityBarGraph.setBarValue(mExternalFoodList.get(songIter).complexity());
 
         dialog.show();}
 
@@ -202,7 +201,7 @@ public class FoodRecommendationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(mExternalSongList.get(songIter).fileid()));
+                //intent.setData(Uri.parse(mExternalFoodList.get(songIter).fileid()));
                 startActivity(intent);
             }
         });
@@ -218,7 +217,7 @@ public class FoodRecommendationFragment extends Fragment {
         final RadioGroup complexityRadioGroup = (RadioGroup) dialog.findViewById(R.id.compexity_radio_group);
         if(assessmentList.get(songIter)!=null) {
             //Show assessed values if the song is already assessed, otherwise radio button to perfect
-            if (assessmentList.get(songIter).getH() == ModificationType.TOO_MUCH) {
+            /*if (assessmentList.get(songIter).getH() == ModificationType.TOO_MUCH) {
                 ((RadioButton) (heavinessRadioGroup.getChildAt(2))).setChecked(true);
             } else if (assessmentList.get(songIter).getH() == ModificationType.TOO_LOW) {
                 ((RadioButton) (heavinessRadioGroup.getChildAt(0))).setChecked(true);
@@ -232,7 +231,7 @@ public class FoodRecommendationFragment extends Fragment {
                 ((RadioButton) (complexityRadioGroup.getChildAt(2))).setChecked(true);
             } else if (assessmentList.get(songIter).getC() == ModificationType.TOO_LOW) {
                 ((RadioButton) (complexityRadioGroup.getChildAt(0))).setChecked(true);
-            }
+            }*/
         }
         Button submitButton = (Button) dialog.findViewById(R.id.submit_button);
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -244,20 +243,20 @@ public class FoodRecommendationFragment extends Fragment {
                 String selection_complexity = ((RadioButton) dialog.findViewById(complexityRadioGroup.getCheckedRadioButtonId())).getText().toString();
 
 
-                assessmentList.get(songIter).setH(ModificationType.getModificationType(selection_heaviness)); //getModPreferences(HEAVINESS_TYPE, selection_heaviness);
-                assessmentList.get(songIter).setT(ModificationType.getModificationType(selection_tempo));//getModPreferences(TEMPO_TYPE, selection_tempo);
-                assessmentList.get(songIter).setC(ModificationType.getModificationType(selection_complexity));//getModPreferences(COMPLEXITY_TYPE, selection_complexity);
+                //assessmentList.get(songIter).setH(ModificationType.getModificationType(selection_heaviness)); //getModPreferences(HEAVINESS_TYPE, selection_heaviness);
+                //assessmentList.get(songIter).setT(ModificationType.getModificationType(selection_tempo));//getModPreferences(TEMPO_TYPE, selection_tempo);
+                //assessmentList.get(songIter).setC(ModificationType.getModificationType(selection_complexity));//getModPreferences(COMPLEXITY_TYPE, selection_complexity);
 
                 dialog.dismiss();
 
                 mAssessmentItem.setIcon(R.drawable.selectdata_icon_checked);
 
                 if (nextSong) {
-                    updatePreferences(mMood, mExternalSongList.get(songIter),
+                    /*updatePreferences(mMood, mExternalSongList.get(songIter),
                             assessmentList.get(songIter).getH().mod_name(),
                             assessmentList.get(songIter).getT().mod_name(),
-                            assessmentList.get(songIter).getC().mod_name());
-                    if (songIter == mExternalSongList.size() - 1) {
+                            assessmentList.get(songIter).getC().mod_name());*/
+                    if (songIter == mExternalFoodList.size() - 1) {
                         ConnectivityManager cm = (ConnectivityManager) getView().getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                         NetworkInfo ni = cm.getActiveNetworkInfo();
                         if(ni!=null) {
@@ -283,7 +282,7 @@ public class FoodRecommendationFragment extends Fragment {
                     } else {
                         songIter++;
                         //setURL
-                        updateUIFor(mExternalSongList.get(songIter));
+                        //updateUIFor(mExternalFoodList.get(songIter));
                     }
                 }
             }
@@ -293,14 +292,18 @@ public class FoodRecommendationFragment extends Fragment {
         return dialog;
     }
 
-    protected void updatePreferences(MoodElement moodElement, Song song, String heaviness_pref, String tempo_pref, String complexity_pref){
+    protected void updatePreferences(EventElement eventElement, Food food, String sourness_pref,
+                                     String saltiness_pref, String sweetness_pref, String bitterness_pref,
+                                     String fattiness_pref){
 
-        moodElement.UpdateAllPreferences(song,
-                ModificationType.getModificationType(heaviness_pref),
-                ModificationType.getModificationType(tempo_pref),
-                ModificationType.getModificationType(complexity_pref), true);
+        eventElement.UpdateAllPreferences(food,
+                ModificationType.getModificationType(sourness_pref),
+                ModificationType.getModificationType(saltiness_pref),
+                ModificationType.getModificationType(sweetness_pref),
+                ModificationType.getModificationType(bitterness_pref),
+                ModificationType.getModificationType(fattiness_pref));
 
-        MainActivity.dbhandler.updateMood(moodElement);
+       // MainActivity.dbhandler.updateMood(moodElement);
 
         ConnectivityManager cm = (ConnectivityManager) this.getView().getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
@@ -320,7 +323,7 @@ public class FoodRecommendationFragment extends Fragment {
             }
         }
 
-        mMood = moodElement;
+        mEvent = eventElement;
     }
 
 

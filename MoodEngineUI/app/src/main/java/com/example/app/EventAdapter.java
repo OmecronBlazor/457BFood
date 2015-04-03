@@ -16,6 +16,8 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
+import algorithm.EventElement;
+import algorithm.Food;
 import algorithm.MoodElement;
 import algorithm.Song;
 
@@ -24,23 +26,23 @@ import algorithm.Song;
  */
 public class EventAdapter extends BaseAdapter {
     private Context mContext;
-    private List<MoodElement> mMoods;
+    private List<EventElement> mEvents;
 
     public EventAdapter(Context c) {
         mContext = c;
-        mMoods = MainActivity.dbhandler.getAllMoods();
+        mEvents = MainActivity.dbhandler.getAllEvents();
     }
 
     public int getCount() {
-        return mMoods.size();
+        return mEvents.size();
     }
 
-    public MoodElement getItem(int pos) {
-        return mMoods.get(pos);
+    public EventElement getItem(int pos) {
+        return mEvents.get(pos);
     }
 
     public long getItemId(int pos) {
-        return mMoods.get(pos).id();
+        return mEvents.get(pos).id();
     }
 
     public View getView(final int pos, View convertView, ViewGroup parent) {
@@ -52,17 +54,17 @@ public class EventAdapter extends BaseAdapter {
             button = (Button) convertView;
         }
 
-        MoodElement mood = mMoods.get(pos);
+        EventElement event = mEvents.get(pos);
 
         Display dd = ((Activity) mContext).getWindowManager().getDefaultDisplay();
         DisplayMetrics dm = new DisplayMetrics();
         dd.getMetrics(dm);
         float m_ScaledDensity = dm.scaledDensity;
-        button.setText(mood.mood_name());
+        button.setText(event.event_name());
         button.setSingleLine();
         button.setTextSize((((GridView) parent).getColumnWidth() / 7) / m_ScaledDensity);
         button.setTextColor(Color.WHITE);
-        button.setBackgroundColor(Color.parseColor(mood.mood_colour()));
+        button.setBackgroundColor(Color.parseColor(event.event_colour()));
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -82,11 +84,11 @@ public class EventAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                    ArrayList<Song> list = MainActivity.dbhandler.getRecommendation(mMoods.get(pos).mood_name());
+                    ArrayList<Food> list = MainActivity.dbhandler.getRecommendation(mEvents.get(pos).event_name());
 
                     if (!list.isEmpty()) {
                         try {
-                            Fragment fragment = new FoodRecommendationFragment(list, mMoods.get(pos));
+                            Fragment fragment = new FoodRecommendationFragment(list, mEvents.get(pos));
                             ((MainActivity) view.getContext()).switchToFragment(fragment);
                         } catch (Exception e) {
                             e.printStackTrace();

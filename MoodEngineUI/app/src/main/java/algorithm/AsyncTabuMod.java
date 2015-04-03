@@ -30,7 +30,7 @@ public class AsyncTabuMod extends AsyncTask<String, String, Boolean> {
     }
     @Override
     protected Boolean doInBackground(String... params) {
-        MainActivity.dbhandler.updatePerfectAssessments(mood.id(), this.heaviness_mod, this.tempo_mod, this.complexity_mod);
+        //MainActivity.dbhandler.updatePerfectAssessments(mood.id(), this.heaviness_mod, this.tempo_mod, this.complexity_mod);
         return true;
     }
 
