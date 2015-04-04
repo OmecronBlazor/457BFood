@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import algorithm.EventElement;
 import algorithm.MoodElement;
 import algorithm.Preference;
 
@@ -25,21 +26,23 @@ import algorithm.Preference;
  * Created by Steven on 24/07/14.
  */
 public class AddEventFragment extends Fragment {
-    private List<MoodElement> mMoods;
+    private List<EventElement> mEvents;
 
-    private TextView mAddMoodTitle;
-    private EditText mMoodName;
+    private TextView mAddEventTitle;
+    private EditText mEventName;
     private TextView mColorTitle;
     private GridView mColourGridView;
-    private SeekBar mHeavinessSeekBar;
-    private SeekBar mTempoSeekBar;
-    private SeekBar mComplexitySeekBar;
-    private Button mCreateMood;
+    private SeekBar mSournessSeekBar;
+    private SeekBar mSaltinessSeekBar;
+    private SeekBar mSweetnessSeekBar;
+    private SeekBar mBitternessSeekBar;
+    private SeekBar mFattinessSeekBar;
+    private Button mCreateEvent;
 
     private ColorSelectAdapter mColorSelectAdapter;
 
     public AddEventFragment() {
-        mMoods = null;//MainActivity.dbhandler.getAllMoods();
+        mEvents = MainActivity.dbhandler.getAllEvents();
     }
 
     @Override
@@ -47,21 +50,23 @@ public class AddEventFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.add_event_fragment, container, false);
 
-        mAddMoodTitle = (TextView) rootView.findViewById(R.id.add_event_title);
-        mMoodName = (EditText) rootView.findViewById(R.id.add_event_name);
+        mAddEventTitle = (TextView) rootView.findViewById(R.id.add_event_title);
+        mEventName = (EditText) rootView.findViewById(R.id.add_event_name);
         mColorTitle = (TextView) rootView.findViewById(R.id.add_event_colour_title);
-        mColourGridView = (GridView) rootView.findViewById(R.id.add_mood_colour_select);
-        mCreateMood = (Button) rootView.findViewById(R.id.add_mood_submit_button);
-        mHeavinessSeekBar = (SeekBar) rootView.findViewById(R.id.heaviness_seekbar);
-        mTempoSeekBar = (SeekBar) rootView.findViewById(R.id.tempo_seekbar);
-        mComplexitySeekBar = (SeekBar) rootView.findViewById(R.id.complexity_seekbar);
+        mColourGridView = (GridView) rootView.findViewById(R.id.add_event_colour_select);
+        mCreateEvent = (Button) rootView.findViewById(R.id.add_event_submit_button);
+        mSournessSeekBar = (SeekBar) rootView.findViewById(R.id.sourness_seekbar);
+        mSaltinessSeekBar = (SeekBar) rootView.findViewById(R.id.saltiness_seekbar);
+        mSweetnessSeekBar = (SeekBar) rootView.findViewById(R.id.sweetness_seekbar);
+        mBitternessSeekBar = (SeekBar) rootView.findViewById(R.id.bitterness_seekbar);
+        mFattinessSeekBar = (SeekBar) rootView.findViewById(R.id.fattiness_seekbar);
 
-        mMoodName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        mEventName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(mMoodName.getWindowToken(), 0);
+                    imm.hideSoftInputFromWindow(mEventName.getWindowToken(), 0);
                 }
             }
         });
@@ -73,27 +78,35 @@ public class AddEventFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 mColorSelectAdapter.selectedIndex = i;
                 mColorSelectAdapter.notifyDataSetChanged();
-                mMoodName.clearFocus();
+                mEventName.clearFocus();
             }
         });
         View.OnTouchListener touchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                mMoodName.clearFocus();
+                mEventName.clearFocus();
                 return false;
             }
         };
-        mHeavinessSeekBar.setOnTouchListener(touchListener);
-        mTempoSeekBar.setOnTouchListener(touchListener);
-        mComplexitySeekBar.setOnTouchListener(touchListener);
+        mSournessSeekBar.setOnTouchListener(touchListener);
+        mSaltinessSeekBar.setOnTouchListener(touchListener);
+        mSweetnessSeekBar.setOnTouchListener(touchListener);
+        mBitternessSeekBar.setOnTouchListener(touchListener);
+        mFattinessSeekBar.setOnTouchListener(touchListener);
 
-        mCreateMood.setOnClickListener(new View.OnClickListener() {
+        mCreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mColorSelectAdapter.selectedIndex != -1 && !mMoodName.getText().toString().equals("")) {
-                    MoodElement moodToAdd = new MoodElement(mMoodName.getText().toString(), new Preference(mHeavinessSeekBar.getProgress(), mTempoSeekBar.getProgress(), mComplexitySeekBar.getProgress()), colors[mColorSelectAdapter.selectedIndex], colors.length + 1);
-                    //moodToAdd.setID(MainActivity.dbhandler.addMood(moodToAdd));
-                    //MainActivity.table.addMood(moodToAdd);
+                if (mColorSelectAdapter.selectedIndex != -1 && !mEventName.getText().toString().equals("")) {
+                    EventElement eventToAdd = new EventElement(mEventName.getText().toString(),
+                            new Preference(mSournessSeekBar.getProgress(),
+                                    mSaltinessSeekBar.getProgress(),
+                                    mSweetnessSeekBar.getProgress(),
+                                    mBitternessSeekBar.getProgress(),
+                                    mFattinessSeekBar.getProgress())
+                            , colors[mColorSelectAdapter.selectedIndex], colors.length + 1);
+                    eventToAdd.setID(MainActivity.dbhandler.addEvent(eventToAdd));
+                    MainActivity.table.addEvent(eventToAdd);
 
                     EventSelectFragment fragmentToLaunch = new EventSelectFragment();
                     ((MainActivity) view.getContext()).switchToFragment(fragmentToLaunch);
@@ -103,7 +116,7 @@ public class AddEventFragment extends Fragment {
             }
         });
 
-        ((MainActivity) getActivity()).setActionBarTitle("Add Mood");
+        ((MainActivity) getActivity()).setActionBarTitle("Add Event");
         return rootView;
     }
 

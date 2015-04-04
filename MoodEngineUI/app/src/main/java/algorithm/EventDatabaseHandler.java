@@ -6,8 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteQueryBuilder;
-import android.provider.MediaStore;
 
 import com.example.app.MainActivity;
 
@@ -24,7 +22,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "ASSESSMENTEngineManager";
+    private static final String DATABASE_NAME = "foodEngineManager";
 
     // table names
     private static final String TABLE_FOOD = "food";
@@ -85,13 +83,13 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
 
     //Mood table create statement
     private static final String CREATE_TABLE_EVENTS = "CREATE TABLE " + TABLE_EVENTS + "("
-            + KEY_EVENT_ID + " INTEGER PRIMARY KEY," + KEY_EVENT_NAME + " TEXT,"
+            + KEY_EVENT_ID + " INTEGER PRIMARY KEY," + KEY_EVENT_NAME + " NVARCHAR,"
             + KEY_EVENT_SOURNESS + " REAL," + KEY_EVENT_SALTINESS + " REAL,"
             + KEY_EVENT_SWEETNESS + " REAL," + KEY_EVENT_BITTERNESS + " REAL,"
             + KEY_EVENT_FATTINESS + " REAL," + KEY_EVENT_COUNTER_SOUR + " INTEGER,"
             + KEY_EVENT_COUNTER_SALTY + " INTEGER," + KEY_EVENT_COUNTER_SWEET + " INTEGER,"
             + KEY_EVENT_COUNTER_BITTER + " INTEGER," + KEY_EVENT_COUNTER_FATTY + " INTEGER,"
-            + KEY_EVENT_COLOUR + " TEXT," + KEY_EVENT_POSITION + " INTEGER" + ")";
+            + KEY_EVENT_COLOUR + " NVARCHAR," + KEY_EVENT_POSITION + " INTEGER" + ")";
 
     //Assessment Table create statement
     private static final String CREATE_TABLE_ASSESSMENTS = "CREATE TABLE " + TABLE_ASSESSMENTS + "("
@@ -103,7 +101,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
 
     //Settings Table create statement
     private static final String CREATE_TABLE_SETTINGS = "CREATE TABLE " + TABLE_SETTINGS + " ("
-            + KEY_SETTINGS_ID + " INTEGER PRIMARY KEY," + KEY_SETTINGS_NAME + "TEXT,"
+            + KEY_SETTINGS_ID + " INTEGER PRIMARY KEY," + KEY_SETTINGS_NAME + "NVARCHAR,"
             + KEY_SETTINGS_STATE + " BOOLEAN" + ")";
 
     public EventDatabaseHandler(Context context) {
