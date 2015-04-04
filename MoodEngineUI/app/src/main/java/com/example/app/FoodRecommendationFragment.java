@@ -36,7 +36,6 @@ import algorithm.ModificationType;
 public class FoodRecommendationFragment extends Fragment {
 
     private TextView mTitleTextView;
-    private TextView mArtistTextView;
     private ImageButton mUrlButton;
     private ControllerView mControllerView;
     private EventElement mEvent;
@@ -46,7 +45,6 @@ public class FoodRecommendationFragment extends Fragment {
     protected Dialog dialog;
     private final String FEEDBACK = "Feedback";
     public List<ModificationParams> assessmentList = new ArrayList<ModificationParams>();
-    boolean manualPrefChoice = false;
     protected MenuItem mAssessmentItem;
 
     public Menu mMenu;
@@ -134,7 +132,7 @@ public class FoodRecommendationFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         if (foodIter == 0) {
-                            Toast toast = Toast.makeText(thisFragment.getView().getContext(), "This is the start of the playlist.", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(thisFragment.getView().getContext(), "This is the start of the list.", Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                             return;
@@ -154,24 +152,26 @@ public class FoodRecommendationFragment extends Fragment {
     public void showSongStatGraphs() {
         Dialog dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.dialog_song_stat_graphs);
-        dialog.setTitle("Song Stats");
-        /*BarGraphView heavinessBarGraph = (BarGraphView) dialog.findViewById(R.id.heaviness_bar_graph);
-        BarGraphView tempoBarGraph = (BarGraphView) dialog.findViewById(R.id.tempo_bar_graph);
-        BarGraphView complexityBarGraph = (BarGraphView) dialog.findViewById(R.id.complexity_bar_graph);*/
+        dialog.setTitle("Food Stats");
+        BarGraphView sournessBarGraph = (BarGraphView) dialog.findViewById(R.id.sourness_bar_graph);
+        BarGraphView saltinessBarGraph = (BarGraphView) dialog.findViewById(R.id.saltiness_bar_graph);
+        BarGraphView sweetnessBarGraph = (BarGraphView) dialog.findViewById(R.id.sweetness_bar_graph);
+        BarGraphView bitternessBarGraph = (BarGraphView) dialog.findViewById(R.id.bitterness_bar_graph);
+        BarGraphView fattinessBarGraph = (BarGraphView) dialog.findViewById(R.id.fattiness_bar_graph);
 
-        //heavinessBarGraph.setBarValue(mFoodList.get(songIter).heaviness());
-        //tempoBarGraph.setBarValue(mFoodList.get(songIter).tempo());
-        //complexityBarGraph.setBarValue(mFoodList.get(songIter).complexity());
+        sournessBarGraph.setBarValue(mFoodList.get(foodIter).sourness());
+        saltinessBarGraph.setBarValue(mFoodList.get(foodIter).saltiness());
+        sweetnessBarGraph.setBarValue(mFoodList.get(foodIter).sweetness());
+        bitternessBarGraph.setBarValue(mFoodList.get(foodIter).bitterness());
+        fattinessBarGraph.setBarValue(mFoodList.get(foodIter).fattiness());
 
-        dialog.show();}
+        dialog.show();
+    }
 
     public void updateUIFor(final Food food) {
         mTitleTextView.setText(food.name());
         mTitleTextView.setEnabled(true);
         mTitleTextView.setSelected(true);
-        /*mArtistTextView.setText(song.artist());
-        mArtistTextView.setEnabled(true);
-        mArtistTextView.setSelected(true);*/
         if(assessmentList.get(foodIter).isNull()){
             mAssessmentItem.setIcon(R.drawable.selectdata_icon);
         }
@@ -200,22 +200,32 @@ public class FoodRecommendationFragment extends Fragment {
         final RadioGroup bitternessRadioGroup = (RadioGroup) dialog.findViewById(R.id.bitterness_radio_group);
         final RadioGroup fattinessRadioGroup = (RadioGroup) dialog.findViewById(R.id.fattiness_radio_group);
         if(assessmentList.get(foodIter)!=null) {
-            //Show assessed values if the song is already assessed, otherwise radio button to perfect
-            /*if (assessmentList.get(songIter).getH() == ModificationType.TOO_MUCH) {
-                ((RadioButton) (heavinessRadioGroup.getChildAt(2))).setChecked(true);
-            } else if (assessmentList.get(songIter).getH() == ModificationType.TOO_LOW) {
-                ((RadioButton) (heavinessRadioGroup.getChildAt(0))).setChecked(true);
+            //Show assessed values if the food is already assessed, otherwise radio button to perfect
+            if (assessmentList.get(foodIter).sourness() == ModificationType.TOO_MUCH) {
+                ((RadioButton) (sournessRadioGroup.getChildAt(2))).setChecked(true);
+            } else if (assessmentList.get(foodIter).sourness() == ModificationType.TOO_LOW) {
+                ((RadioButton) (sournessRadioGroup.getChildAt(0))).setChecked(true);
             }
-            if (assessmentList.get(songIter).getT() == ModificationType.TOO_MUCH) {
-                ((RadioButton) (tempoRadioGroup.getChildAt(2))).setChecked(true);
-            } else if (assessmentList.get(songIter).getT() == ModificationType.TOO_LOW) {
-                ((RadioButton) (tempoRadioGroup.getChildAt(0))).setChecked(true);
+            if (assessmentList.get(foodIter).saltiness() == ModificationType.TOO_MUCH) {
+                ((RadioButton) (saltinessRadioGroup.getChildAt(2))).setChecked(true);
+            } else if (assessmentList.get(foodIter).saltiness() == ModificationType.TOO_LOW) {
+                ((RadioButton) (saltinessRadioGroup.getChildAt(0))).setChecked(true);
             }
-            if (assessmentList.get(songIter).getC() == ModificationType.TOO_MUCH) {
-                ((RadioButton) (complexityRadioGroup.getChildAt(2))).setChecked(true);
-            } else if (assessmentList.get(songIter).getC() == ModificationType.TOO_LOW) {
-                ((RadioButton) (complexityRadioGroup.getChildAt(0))).setChecked(true);
-            }*/
+            if (assessmentList.get(foodIter).sweetness() == ModificationType.TOO_MUCH) {
+                ((RadioButton) (sweetnessRadioGroup.getChildAt(2))).setChecked(true);
+            } else if (assessmentList.get(foodIter).sweetness() == ModificationType.TOO_LOW) {
+                ((RadioButton) (sweetnessRadioGroup.getChildAt(0))).setChecked(true);
+            }
+            if (assessmentList.get(foodIter).bitterness() == ModificationType.TOO_MUCH) {
+                ((RadioButton) (bitternessRadioGroup.getChildAt(2))).setChecked(true);
+            } else if (assessmentList.get(foodIter).bitterness() == ModificationType.TOO_LOW) {
+                ((RadioButton) (bitternessRadioGroup.getChildAt(0))).setChecked(true);
+            }
+            if (assessmentList.get(foodIter).fattiness() == ModificationType.TOO_MUCH) {
+                ((RadioButton) (fattinessRadioGroup.getChildAt(2))).setChecked(true);
+            } else if (assessmentList.get(foodIter).fattiness() == ModificationType.TOO_LOW) {
+                ((RadioButton) (fattinessRadioGroup.getChildAt(0))).setChecked(true);
+            }
         }
         Button submitButton = (Button) dialog.findViewById(R.id.submit_button);
         submitButton.setOnClickListener(new View.OnClickListener() {
