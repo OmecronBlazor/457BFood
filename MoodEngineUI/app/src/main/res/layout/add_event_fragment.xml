@@ -31,7 +31,7 @@
         android:text="Select a color"
         android:textColor="#fff"/>
     <GridView
-        android:id="@+id/add_event_colour_select"
+        android:id="@+id/add_mood_colour_select"
         android:layout_width="match_parent"
         android:numColumns="3"
         android:verticalSpacing="5dp"
@@ -40,22 +40,22 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_below="@+id/add_event_colour_title"
-        android:layout_above="@+id/sourness_seekbar_text"/>
+        android:layout_above="@+id/heaviness_seekbar_text"/>
     <TextView
-        android:id="@+id/sourness_seekbar_text"
-        android:text="Sourness"
+        android:id="@+id/heaviness_seekbar_text"
+        android:text="Heaviness"
         android:textColor="@android:color/white"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/sourness_seekbar"/>
+        android:layout_above="@+id/heaviness_seekbar"/>
 
     <SeekBar
-        android:id="@+id/sourness_seekbar"
+        android:id="@+id/heaviness_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/saltiness_seekbar_text"
-        android:padding="8dp"
+        android:layout_above="@+id/tempo_seekbar_text"
+        android:padding="16dp"
         android:indeterminate="false"
         android:progress="5"
         android:max="10"
@@ -64,20 +64,20 @@
         android:progressDrawable="@drawable/progressbar" />
 
     <TextView
-        android:id="@+id/saltiness_seekbar_text"
-        android:text="Saltiness"
+        android:id="@+id/tempo_seekbar_text"
+        android:text="Tempo"
         android:textColor="@android:color/white"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/saltiness_seekbar"/>
+        android:layout_above="@+id/tempo_seekbar"/>
 
     <SeekBar
-        android:id="@+id/saltiness_seekbar"
+        android:id="@+id/tempo_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/sweetness_seekbar_text"
-        android:padding="8dp"
+        android:layout_above="@+id/complexity_seekbar_text"
+        android:padding="16dp"
         android:indeterminate="false"
         android:progress="5"
         android:max="10"
@@ -86,59 +86,19 @@
         android:progressDrawable="@drawable/progressbar" />
 
     <TextView
-        android:id="@+id/sweetness_seekbar_text"
-        android:text="Sweetness"
+        android:id="@+id/complexity_seekbar_text"
+        android:text="Complexity"
         android:textColor="@android:color/white"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/sweetness_seekbar"/>
+        android:layout_above="@+id/complexity_seekbar"/>
     <SeekBar
-        android:id="@+id/sweetness_seekbar"
+        android:id="@+id/complexity_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bitterness_seekbar_text"
-        android:padding="8dp"
-        android:indeterminate="false"
-        android:progress="5"
-        android:max="10"
-        android:thumb="@android:drawable/divider_horizontal_bright"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:progressDrawable="@drawable/progressbar" />
-    <TextView
-        android:id="@+id/bitterness_seekbar_text"
-        android:text="Bitterness"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bitterness_seekbar"/>
-    <SeekBar
-        android:id="@+id/bitterness_seekbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fattiness_seekbar_text"
-        android:padding="8dp"
-        android:indeterminate="false"
-        android:progress="5"
-        android:max="10"
-        android:thumb="@android:drawable/divider_horizontal_bright"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:progressDrawable="@drawable/progressbar" />
-    <TextView
-        android:id="@+id/fattiness_seekbar_text"
-        android:text="Fattiness"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fattiness_seekbar"/>
-    <SeekBar
-        android:id="@+id/fattiness_seekbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/add_event_submit_button"
-        android:padding="8dp"
+        android:layout_above="@+id/add_mood_submit_button"
+        android:padding="16dp"
         android:indeterminate="false"
         android:progress="5"
         android:max="10"
@@ -146,7 +106,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/progressbar" />
     <Button
-        android:id="@+id/add_event_submit_button"
+        android:id="@+id/add_mood_submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

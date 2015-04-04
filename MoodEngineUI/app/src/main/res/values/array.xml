@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="sidebar_option">
-        <item>Select Event</item>
-        <item>Add Event</item>
+        <item>Play Local Music</item>
+        <item>Add Mood</item>
     </string-array>
     <string-array name="property_titles">
         <item>Sourness</item>
