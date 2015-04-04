@@ -7,11 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-import java.util.List;
-
-import algorithm.EventElement;
-import algorithm.MoodElement;
-
 /**
  * Created by Steven on 24/07/14.
  */

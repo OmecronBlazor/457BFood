@@ -5,15 +5,8 @@ import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageButton;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import algorithm.MoodElement;
-import algorithm.Song;
 
 /**
  * Created by Steven on 2015-02-10.

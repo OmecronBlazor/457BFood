@@ -18,8 +18,6 @@ import java.util.List;
 
 import algorithm.EventElement;
 import algorithm.Food;
-import algorithm.MoodElement;
-import algorithm.Song;
 
 /**
  * Created by Steven on 2015-02-10.

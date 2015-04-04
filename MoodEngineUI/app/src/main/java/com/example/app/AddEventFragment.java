@@ -19,7 +19,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import algorithm.EventElement;
-import algorithm.MoodElement;
 import algorithm.Preference;
 
 /**

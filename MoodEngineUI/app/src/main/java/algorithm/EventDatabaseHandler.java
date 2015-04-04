@@ -74,14 +74,14 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_SETTINGS_STATE = "settings_state";
 
     //Table Create Statements
-    //Song table create statement
+    //Food table create statement
     private static final String CREATE_TABLE_FOOD = "CREATE TABLE " + TABLE_FOOD + "("
             + KEY_FOOD_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " NVARCHAR,"
             + KEY_FOOD_SOURNESS + " REAL," + KEY_FOOD_SALTINESS + " REAL,"
             + KEY_FOOD_SWEETNESS + " REAL," + KEY_FOOD_BITTERNESS + " REAL,"
             + KEY_FOOD_FATTINESS + " REAL," + KEY_FOOD_COUNTER + " INTEGER)";
 
-    //Mood table create statement
+    //Event table create statement
     private static final String CREATE_TABLE_EVENTS = "CREATE TABLE " + TABLE_EVENTS + "("
             + KEY_EVENT_ID + " INTEGER PRIMARY KEY," + KEY_EVENT_NAME + " NVARCHAR,"
             + KEY_EVENT_SOURNESS + " REAL," + KEY_EVENT_SALTINESS + " REAL,"
@@ -157,7 +157,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         while(!foodCursor.isAfterLast()) {
 
             //TODO: CSV SHIT FIGURE OUT FOR GETTING DATA TO PUT INTO DATABASE
-            /*values.put(KEY_FOOD_NAME, foodCursor.getString(foodCursor.getColumnIndex(MediaStore.Audio.Media.TITLE))); // Song Name
+            /*values.put(KEY_FOOD_NAME, foodCursor.getString(foodCursor.getColumnIndex(MediaStore.Audio.Media.TITLE))); // Food's Name
             values.put( KEY_FOOD_SOURNESS, foodCursor.getString() ); // Food's Sourness
             values.put( KEY_FOOD_SALTINESS, foodCursor.getString() ); // Food's Saltiness
             values.put( KEY_FOOD_SWEETNESS, foodCursor.getString() ); // Food's Sweetness
