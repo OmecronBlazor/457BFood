@@ -6,28 +6,28 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/heaviness_text"
-        android:text="Heaviness"
+        android:id="@+id/sourness_text"
+        android:text="Sourness"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <RadioGroup
-        android:id="@+id/heaviness_radio_group"
+        android:id="@+id/sourness_radio_group"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center">
         <RadioButton
-            android:id="@+id/hlittle_radio_button"
+            android:id="@+id/sourlittle_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Too Low"
             android:layout_gravity="center_horizontal" />
         <RadioButton
-            android:id="@+id/hperfect_radio_button"
+            android:id="@+id/sourperfect_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -35,7 +35,7 @@
             android:checked="true"
             android:layout_gravity="center_horizontal" />
         <RadioButton
-            android:id="@+id/hmuch_radio_button"
+            android:id="@+id/sourmuch_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,32 +44,114 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/tempo_text"
-        android:text="Tempo"
+        android:id="@+id/saltiness_text"
+        android:text="Saltiness"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/saltiness_radio_group"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" >
+
+        <RadioButton
+            android:id="@+id/saltylittle_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Too Low"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:id="@+id/saltyperfect_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Perfect"
+            android:checked="true"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:id="@+id/saltymuch_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Too Much"
+            android:checked="false" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/sweetness_text"
+        android:text="Sweetness"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/sweetness_radio_group"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" >
+
+        <RadioButton
+            android:id="@+id/sweetlittle_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Too Low"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:id="@+id/sweetperfect_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Perfect"
+            android:checked="true"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:id="@+id/sweetmuch_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Too Much"
+            android:checked="false" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/bitterness_text"
+        android:text="Bitterness"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <RadioGroup
-        android:id="@+id/tempo_radio_group"
+        android:id="@+id/bitterness_radio_group"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
         <RadioButton
-            android:id="@+id/tlittle_radio_button"
+            android:id="@+id/bitterlittle_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Too Low"/>
         <RadioButton
-            android:id="@+id/tperfect_radio_button"
+            android:id="@+id/bitterperfect_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Perfect"
             android:checked="true"/>
         <RadioButton
-            android:id="@+id/tmuch_radio_button"
+            android:id="@+id/bittermuch_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -77,32 +159,32 @@
      </RadioGroup>
 
     <TextView
-        android:id="@+id/complexity_text"
-        android:text="Complexity"
+        android:id="@+id/fattiness_text"
+        android:text="Fattiness"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <RadioGroup
-        android:id="@+id/compexity_radio_group"
+        android:id="@+id/fattiness_radio_group"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
         <RadioButton
-            android:id="@+id/clittle_radio_button"
+            android:id="@+id/fattylittle_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Too Low"/>
         <RadioButton
-            android:id="@+id/cperfect_radio_button"
+            android:id="@+id/fattyperfect_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Perfect"
             android:checked="true"/>
         <RadioButton
-            android:id="@+id/cmuch_radio_button"
+            android:id="@+id/fattymuch_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

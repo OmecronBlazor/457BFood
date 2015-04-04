@@ -45,11 +45,11 @@ public class AddEventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.add_mood_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.add_event_fragment, container, false);
 
-        mAddMoodTitle = (TextView) rootView.findViewById(R.id.add_mood_title);
-        mMoodName = (EditText) rootView.findViewById(R.id.add_mood_name);
-        mColorTitle = (TextView) rootView.findViewById(R.id.add_mood_colour_title);
+        mAddMoodTitle = (TextView) rootView.findViewById(R.id.add_event_title);
+        mMoodName = (EditText) rootView.findViewById(R.id.add_event_name);
+        mColorTitle = (TextView) rootView.findViewById(R.id.add_event_colour_title);
         mColourGridView = (GridView) rootView.findViewById(R.id.add_mood_colour_select);
         mCreateMood = (Button) rootView.findViewById(R.id.add_mood_submit_button);
         mHeavinessSeekBar = (SeekBar) rootView.findViewById(R.id.heaviness_seekbar);

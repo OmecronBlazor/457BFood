@@ -1,12 +1,11 @@
 package com.example.app;
 
+import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -18,38 +17,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ListView;
 
 import java.io.File;
 import java.util.List;
 
-import algorithm.AsyncSyncProcess;
-import algorithm.CSVReader;
-import algorithm.DatabaseHandler;
+import algorithm.AsyncDBAddfoods;
 import algorithm.EventDatabaseHandler;
 import algorithm.EventElement;
 import algorithm.EventTable;
 import algorithm.Food;
 import algorithm.FoodDataReader;
-import algorithm.MoodElement;
-import algorithm.MoodTable;
 import algorithm.Preference;
 
 public class MainActivity extends ActionBarActivity {
     private String[] mSideTrayOptions;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
-    private CheckBox mUploadCheckBox;
     public static EventDatabaseHandler dbhandler;
     public static Preference userpref;
     public static EventTable table;
     private boolean maintainDataBase = true;
-    public static boolean Uploadflag = true;
-    public static String groovesharkSessionID = null;
-    public static String groovesharkCountryID = null;
-    public static final String PREFS_NAME = "FoodEnginePreferences";
-    public static SharedPreferences settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,15 +63,13 @@ public class MainActivity extends ActionBarActivity {
                             System.out.println(get.bitterness());
                             System.out.println(get.fattiness());
                         }
-                        settings = getSharedPreferences(PREFS_NAME, 0);
-                        Uploadflag = settings.getBoolean("uploadSongs", true);
-                        AsyncSyncProcess syncProcess = new AsyncSyncProcess(getContentResolver(), getApplicationContext());
+                        /*AsyncSyncProcess syncProcess = new AsyncSyncProcess(getContentResolver(), getApplicationContext());
                         if (Build.VERSION.SDK_INT >= 11) {
                             //--post GB use serial executor by default --
                             syncProcess.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                         } else {
                             syncProcess.execute();
-                        }
+                        }*/
                         getSupportFragmentManager().beginTransaction()
                                 .add(R.id.container, new EventSelectFragment())
                                 .commit();
@@ -91,18 +77,28 @@ public class MainActivity extends ActionBarActivity {
                     else{
                         dbhandler = new EventDatabaseHandler(getApplicationContext());
                         getSupportFragmentManager().beginTransaction()
-                                .add(R.id.container, new PreferencesFragment())
+                                .add(R.id.container, new EventSelectFragment())
                                 .commit();
                     }
                 } else {
                     //create DB
-                    FoodDataReader reader = new FoodDataReader();
-                    List<Food> foodList = reader.readFoodData(getApplicationContext(), "food_data.csv");
                     dbhandler = new EventDatabaseHandler(getApplicationContext());
+                    MainActivity.userpref = new Preference(5,5,5,5,5);
+                    MainActivity.table = new EventTable( MainActivity.userpref );
+                    for(EventElement event : MainActivity.table.getAllEvents()) {
+                        int eventID = MainActivity.dbhandler.addEvent(event);
+                        MainActivity.table.getEvent(event.event_name()).setID(eventID);
+                    }
+                    AsyncDBAddfoods addFoods = new AsyncDBAddfoods(this.getApplicationContext());
+                    if (Build.VERSION.SDK_INT >= 11) {
+                        //--post GB use serial executor by default --
+                        addFoods.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    } else {
+                        addFoods.execute();
+                    }
                     getSupportFragmentManager().beginTransaction()
-                            .add(R.id.container, new PreferencesFragment())
+                            .add(R.id.container, new EventSelectFragment())
                             .commit();
-
                 }
             }
             else{
@@ -112,9 +108,23 @@ public class MainActivity extends ActionBarActivity {
                     context.deleteDatabase("foodEngineManager");
                 } else {
                     //create DB
+                    FoodDataReader reader = new FoodDataReader();
                     dbhandler = new EventDatabaseHandler(getApplicationContext());
+                    MainActivity.userpref = new Preference(5,5,5,5,5);
+                    MainActivity.table = new EventTable( MainActivity.userpref );
+                    for(EventElement event : MainActivity.table.getAllEvents()) {
+                        int eventID = MainActivity.dbhandler.addEvent(event);
+                        MainActivity.table.getEvent(event.event_name()).setID(eventID);
+                    }
+                    AsyncDBAddfoods addFoods = new AsyncDBAddfoods(getApplicationContext());
+                    if (Build.VERSION.SDK_INT >= 11) {
+                        //--post GB use serial executor by default --
+                        addFoods.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    } else {
+                        addFoods.execute();
+                    }
                     getSupportFragmentManager().beginTransaction()
-                            .add(R.id.container, new PreferencesFragment())
+                            .add(R.id.container, new EventSelectFragment())
                             .commit();
                 }
             }
@@ -132,7 +142,6 @@ public class MainActivity extends ActionBarActivity {
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.drawer_list_item, mSideTrayOptions));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-        mDrawerList.addFooterView(mUploadCheckBox);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
@@ -205,9 +214,6 @@ public class MainActivity extends ActionBarActivity {
                 switchToFragment(new EventSelectFragment());
                 break;
             case 1:
-                switchToFragment(new EventSelectFragment());
-                break;
-            case 2:
                 switchToFragment(new AddEventFragment());
                 break;
         }

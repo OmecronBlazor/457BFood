@@ -4,7 +4,7 @@
     tools:context="com.example.app.MainActivity" >
 
     <item android:id="@+id/action_feedback"
-        android:title="Rate song"
+        android:title="Rate food"
         android:icon="@drawable/selectdata_icon"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/action_graphs"

@@ -2,12 +2,13 @@
 <resources>
     <string-array name="sidebar_option">
         <item>Play Local Music</item>
-        <item>Play Any Music</item>
         <item>Add Mood</item>
     </string-array>
     <string-array name="property_titles">
-        <item>Heaviness</item>
-        <item>Tempo</item>
-        <item>Complexity</item>
+        <item>Sourness</item>
+        <item>Saltiness</item>
+        <item>Sweetness</item>
+        <item>Bitterness</item>
+        <item>Fattiness</item>
     </string-array>
 </resources>

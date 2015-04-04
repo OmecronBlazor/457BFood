@@ -5,32 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.app.BarGraphView
-        android:id="@+id/heaviness_bar_graph"
+        android:id="@+id/sourness_bar_graph"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:padding="5dp"
         android:layout_weight="1"
-        custom:label_text="Heaviness"
+        custom:label_text="Sourness"
         custom:bar_value="5.0"
         custom:text_color="#FFFFFF"
         custom:text_array="@array/property_titles"/>
     <com.example.app.BarGraphView
-        android:id="@+id/tempo_bar_graph"
+        android:id="@+id/saltiness_bar_graph"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:padding="5dp"
         android:layout_weight="1"
-        custom:label_text="Tempo"
+        custom:label_text="Saltiness"
         custom:bar_value="10"
         custom:text_color="#FFFFFF"
         custom:text_array="@array/property_titles"/>
     <com.example.app.BarGraphView
-        android:id="@+id/complexity_bar_graph"
+        android:id="@+id/sweetness_bar_graph"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:padding="5dp"
         android:layout_weight="1"
-        custom:label_text="Complexity"
+        custom:label_text="Sweetness"
+        custom:bar_value="0"
+        custom:text_color="#FFFFFF"
+        custom:text_array="@array/property_titles"/>
+    <com.example.app.BarGraphView
+        android:id="@+id/bitterness_bar_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:padding="5dp"
+        android:layout_weight="1"
+        custom:label_text="Bitterness"
+        custom:bar_value="0"
+        custom:text_color="#FFFFFF"
+        custom:text_array="@array/property_titles"/>
+    <com.example.app.BarGraphView
+        android:id="@+id/fattiness_bar_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:padding="5dp"
+        android:layout_weight="1"
+        custom:label_text="Fattiness"
         custom:bar_value="0"
         custom:text_color="#FFFFFF"
         custom:text_array="@array/property_titles"/>

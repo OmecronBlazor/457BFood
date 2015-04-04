@@ -91,7 +91,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
             + KEY_EVENT_FATTINESS + " REAL," + KEY_EVENT_COUNTER_SOUR + " INTEGER,"
             + KEY_EVENT_COUNTER_SALTY + " INTEGER," + KEY_EVENT_COUNTER_SWEET + " INTEGER,"
             + KEY_EVENT_COUNTER_BITTER + " INTEGER," + KEY_EVENT_COUNTER_FATTY + " INTEGER,"
-            + KEY_EVENT_COLOUR + " STRING," + KEY_EVENT_POSITION + " INTEGER" + ")";
+            + KEY_EVENT_COLOUR + " TEXT," + KEY_EVENT_POSITION + " INTEGER" + ")";
 
     //Assessment Table create statement
     private static final String CREATE_TABLE_ASSESSMENTS = "CREATE TABLE " + TABLE_ASSESSMENTS + "("
@@ -103,7 +103,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
 
     //Settings Table create statement
     private static final String CREATE_TABLE_SETTINGS = "CREATE TABLE " + TABLE_SETTINGS + " ("
-            + KEY_SETTINGS_ID + " INTEGER PRIMARY KEY," + KEY_SETTINGS_NAME + "STRING,"
+            + KEY_SETTINGS_ID + " INTEGER PRIMARY KEY," + KEY_SETTINGS_NAME + "TEXT,"
             + KEY_SETTINGS_STATE + " BOOLEAN" + ")";
 
     public EventDatabaseHandler(Context context) {
@@ -380,7 +380,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                         Double.parseDouble( cursor.getString(6) ) ), Integer.parseInt(cursor.getString(7)),
                 Integer.parseInt( cursor.getString(8)), Integer.parseInt( cursor.getString(9)),
                 Integer.parseInt( cursor.getString(10)), Integer.parseInt( cursor.getString(11)),
-                cursor.getString(13), Integer.parseInt(cursor.getString(14)) );
+                cursor.getString(12), Integer.parseInt(cursor.getString(13)) );
 
         cursor.close();
         // return event
@@ -406,7 +406,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                                 Double.parseDouble( cursor.getString(6) ) ), Integer.parseInt(cursor.getString(7)),
                         Integer.parseInt( cursor.getString(8)), Integer.parseInt( cursor.getString(9)),
                         Integer.parseInt( cursor.getString(10)), Integer.parseInt( cursor.getString(11)),
-                        cursor.getString(13), Integer.parseInt(cursor.getString(14)) );
+                        cursor.getString(12), Integer.parseInt(cursor.getString(13)) );
 
                 // Adding event to list
                 eventList.add(event);

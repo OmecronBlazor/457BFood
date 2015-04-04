@@ -5,27 +5,28 @@
     android:background="#000">
 
     <TextView
-        android:id="@+id/add_mood_title"
+        android:id="@+id/add_event_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:text="Add a new mood!"
+        android:text="Add a new event!"
         android:textSize="16sp"
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:layout_alignParentEnd="true" />
     <EditText
-        android:id="@+id/add_mood_name"
+        android:id="@+id/add_event_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/add_mood_title"
+        android:layout_below="@+id/add_event_title"
         android:textColor="#fff"
         android:maxLength="15"
-        android:hint="Mood Name"/>
+        android:hint="Event Name"/>
     <TextView
-        android:id="@+id/add_mood_colour_title"
+        android:id="@+id/add_event_colour_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/add_mood_name"
+        android:layout_below="@+id/add_event_name"
         android:gravity="center_horizontal"
         android:text="Select a color"
         android:textColor="#fff"/>
@@ -38,7 +39,7 @@
         android:stretchMode="columnWidth"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_below="@id/add_mood_colour_title"
+        android:layout_below="@+id/add_event_colour_title"
         android:layout_above="@+id/heaviness_seekbar_text"/>
     <TextView
         android:id="@+id/heaviness_seekbar_text"

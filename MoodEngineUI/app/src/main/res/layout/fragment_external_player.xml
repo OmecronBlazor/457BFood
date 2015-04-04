@@ -9,7 +9,7 @@
         android:layout_alignParentTop="true"
         android:layout_above="@+id/controller_view_container"
         android:src="@drawable/albumartdefault"
-        android:layout_below="@+id/artist_text_view" />
+        android:layout_below="@+id/title_text_view" />
 
     <FrameLayout
         android:id="@+id/controller_view_container"
@@ -30,20 +30,6 @@
         android:focusable="true"
         android:clickable="true" />
 
-    <TextView
-        android:id="@+id/artist_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_text_view"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:textColor="#FFF"
-        android:textSize="18sp"
-        android:text="artist"
-        android:focusable="true"
-        android:clickable="true" />
-
     <ImageButton
         android:id="@+id/url_link_button"
         android:layout_width="150dp"
@@ -51,6 +37,6 @@
         android:layout_alignTop="@id/controller_view_container"
         android:background="#00ffffff"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/stream_state_list"
+        android:src="@drawable/search_state_list"
         android:scaleType="fitCenter"/>
 </RelativeLayout>
