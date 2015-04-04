@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import algorithm.EventElement;
@@ -54,6 +55,7 @@ public class FoodRecommendationFragment extends Fragment {
 
     public FoodRecommendationFragment(ArrayList<Food> foodList, EventElement event) {
         this.mEvent = event;
+        Collections.shuffle(foodList);
         this.mFoodList = foodList;
         this.thisFragment = this;
         for(int x=0;x<foodList.size();x++) {
@@ -116,11 +118,9 @@ public class FoodRecommendationFragment extends Fragment {
                             if (foodIter == mFoodList.size() - 1) {
                                 foodIter++;
                                 //get next recommendation
-                                /*ProgressDialog progress = new ProgressDialog(thisFragment.getView().getContext());
-                                progress.setTitle("Loading");
-                                progress.setMessage("Getting a recommendation from internet...");
-                                progress.show();*/
-                                //GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
+                                ArrayList<Food> list = MainActivity.dbhandler.getRecommendation(mEvent.event_name());
+                                Collections.shuffle(list);
+                                mFoodList.addAll(list);
                             } else {
                                 foodIter++;
                                 updateUIFor(mFoodList.get(foodIter));
@@ -248,13 +248,11 @@ public class FoodRecommendationFragment extends Fragment {
                             assessmentList.get(foodIter).bitterness().mod_name(),
                             assessmentList.get(foodIter).fattiness().mod_name());
                     if (foodIter == mFoodList.size() - 1) {
-                                foodIter++;
-                                //get a new recommendation
-                                /*ProgressDialog progress = new ProgressDialog(thisFragment.getView().getContext());
-                                progress.setTitle("Loading");
-                                progress.setMessage("Getting a recommendation from internet...");
-                                progress.show();*/
-                                //GetExternalRecommendation newrec = new GetExternalRecommendation(mMood, progress, thisFragment);
+                            foodIter++;
+                            //get a new recommendation
+                            ArrayList<Food> list = MainActivity.dbhandler.getRecommendation(mEvent.event_name());
+                            Collections.shuffle(list);
+                            mFoodList.addAll(list);
                     } else {
                         foodIter++;
                         updateUIFor(mFoodList.get(foodIter));
