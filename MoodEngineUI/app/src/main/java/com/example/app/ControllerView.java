@@ -197,7 +197,7 @@ public class ControllerView extends FrameLayout {
             mPrevButton.setVisibility(View.GONE);
         }
 
-        mProgress = null;//(ProgressBar) v.findViewById(R.id.mediacontroller_progress);
+        mProgress = (ProgressBar) v.findViewById(R.id.mediacontroller_progress);
         if (mProgress != null) {
             if (mProgress instanceof SeekBar) {
                 SeekBar seeker = (SeekBar) mProgress;

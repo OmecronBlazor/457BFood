@@ -49,7 +49,7 @@ public class EventElement {
         event_position = pos;
     }
 
-    /*TODO Create a colour object for mood instead of just string*/
+    /*TODO Create a colour object for event instead of just string*/
     public EventElement( int id, String name, Preference preference, int mod_counter_sour, int mod_counter_spicy, int mod_counter_sweet, int mod_counter_bitter, int mod_counter_fatty, String colour, int pos )
     {
         this.id = id;

@@ -1,18 +1,11 @@
 package algorithm;
 
-import android.content.ContentResolver;
 import android.content.Context;
-import android.database.Cursor;
 import android.os.AsyncTask;
-
-import com.example.app.EventSelectFragment;
 import com.example.app.MainActivity;
-import com.example.app.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
-//Adds songs to the database initially when first starting the app.
+//Adds foods to the database initially when first starting the app.
 
 public class AsyncDBAddfoods extends AsyncTask<String, String, Boolean> {
 

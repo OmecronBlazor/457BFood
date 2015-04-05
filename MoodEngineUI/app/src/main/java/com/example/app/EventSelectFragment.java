@@ -22,9 +22,9 @@ public class EventSelectFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_mood_select, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_event_select, container, false);
 
-        GridView gridView = (GridView) rootView.findViewById(R.id.mood_select_gridview);
+        GridView gridView = (GridView) rootView.findViewById(R.id.event_select_gridview);
         gridView.setAdapter(new EventAdapter(getActivity()) );
 
         ((MainActivity)getActivity()).setActionBarTitle("Select Event");

@@ -215,7 +215,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
 
         cursor.close();
 
-        // return song list
+        // return food list
         return foodList;
     }
 
@@ -251,7 +251,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                         Food food = new Food(Integer.parseInt(cursor.getString(0)), cursor.getString(1), Double.parseDouble( cursor.getString(2) ),
                                 Double.parseDouble( cursor.getString(3) ), Double.parseDouble( cursor.getString(4) ), Double.parseDouble( cursor.getString(5)),
                                 Double.parseDouble( cursor.getString(6) ), Integer.parseInt( cursor.getString(7)));
-                        // Adding song to list
+                        // Adding food to list
                         foodList.add(food);
                     } while (cursor.moveToNext());
                 }
@@ -356,7 +356,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
         int eventID = Integer.parseInt( cursor.getString(0) );
 
         db.close(); // Closing database connection
-        // return mood ID
+        // return ID
         return eventID;
     }
 
@@ -572,7 +572,7 @@ public class EventDatabaseHandler extends SQLiteOpenHelper {
                 KEY_FOOD_FATTINESS + " = "
                 + "CASE WHEN " + KEY_FOOD_FATTINESS + "+('" + fattinessmod + "')>10 THEN 10"
                 + " WHEN " + KEY_FOOD_FATTINESS + "+('" + fattinessmod + "')<0 THEN 0"
-                + " ELSE " + KEY_FOOD_FATTINESS + "+('" + fattinessmod + "') END, " +
+                + " ELSE " + KEY_FOOD_FATTINESS + "+('" + fattinessmod + "') END " +
 
                 " WHERE " + KEY_FOOD_ID + " IN (SELECT " + KEY_ASSESSMENT_FOOD_ID + " FROM " + TABLE_ASSESSMENTS +
                 " WHERE " + KEY_EVENT_ID + " = " + event_id +

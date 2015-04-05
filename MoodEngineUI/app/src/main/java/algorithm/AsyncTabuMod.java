@@ -1,17 +1,10 @@
 package algorithm;
 
-import android.database.Cursor;
 import android.os.AsyncTask;
-import android.provider.MediaStore;
-
 import com.example.app.MainActivity;
 
-
-import java.util.ArrayList;
-import java.util.Map;
-
-//This class is used to modify songs marked as perfect for a mood in "tabulist" style when a mood gets modified.
-//Songs will follow that mood around so they stay within selection range.
+//This class is used to modify foods marked as perfect for a events in "tabulist" style when an event gets modified.
+//Foods will follow that event around so they stay within selection range.
 
 public class AsyncTabuMod extends AsyncTask<String, String, Boolean> {
 

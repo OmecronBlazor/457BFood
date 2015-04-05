@@ -1,9 +1,9 @@
 package com.example.app;
 
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -37,6 +38,7 @@ public class FoodRecommendationFragment extends Fragment {
 
     private TextView mTitleTextView;
     private ImageButton mUrlButton;
+    private ImageView mImageButton;
     private ControllerView mControllerView;
     private EventElement mEvent;
     private int foodIter = 0;
@@ -78,7 +80,7 @@ public class FoodRecommendationFragment extends Fragment {
                 showPreferenceSelectionDialog(false);
                 return true;
             case R.id.action_graphs:
-                showSongStatGraphs();
+                showFoodStatGraphs();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -93,10 +95,11 @@ public class FoodRecommendationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_external_player, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_food_recommendation, container, false);
 
         mControllerView = new ControllerView(rootView.getContext(), false);
         mTitleTextView = (TextView) rootView.findViewById(R.id.title_text_view);
+        mImageButton = (ImageView) rootView.findViewById(R.id.food_art_image_view);
         mUrlButton = (ImageButton) rootView.findViewById(R.id.url_link_button);
         ((MainActivity) getActivity()).setActionBarTitle(mEvent.event_name());
 
@@ -149,9 +152,9 @@ public class FoodRecommendationFragment extends Fragment {
         return rootView;
     }
 
-    public void showSongStatGraphs() {
+    public void showFoodStatGraphs() {
         Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.dialog_song_stat_graphs);
+        dialog.setContentView(R.layout.dialog_food_stat_graphs);
         dialog.setTitle("Food Stats");
         BarGraphView sournessBarGraph = (BarGraphView) dialog.findViewById(R.id.sourness_bar_graph);
         BarGraphView saltinessBarGraph = (BarGraphView) dialog.findViewById(R.id.saltiness_bar_graph);
@@ -187,11 +190,19 @@ public class FoodRecommendationFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        mImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?tbm=isch&q="+food.name()));
+                startActivity(intent);
+            }
+        });
     }
 
-    public Dialog showPreferenceSelectionDialog(final boolean nextSong){
+    public Dialog showPreferenceSelectionDialog(final boolean nextFood){
         dialog = new Dialog(this.getActivity());
-        dialog.setContentView(R.layout.dialog_song_feedback);
+        dialog.setContentView(R.layout.dialog_food_feedback);
         dialog.setTitle(FEEDBACK);
 
         final RadioGroup sournessRadioGroup = (RadioGroup) dialog.findViewById(R.id.sourness_radio_group);
@@ -250,7 +261,7 @@ public class FoodRecommendationFragment extends Fragment {
 
                 mAssessmentItem.setIcon(R.drawable.selectdata_icon_checked);
 
-                if (nextSong) {
+                if (nextFood) {
                     updatePreferences(mEvent, mFoodList.get(foodIter),
                             assessmentList.get(foodIter).sourness().mod_name(),
                             assessmentList.get(foodIter).saltiness().mod_name(),
