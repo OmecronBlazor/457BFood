@@ -15,25 +15,24 @@ import java.util.Map;
 
 public class AsyncTabuMod extends AsyncTask<String, String, Boolean> {
 
-    MoodElement mood = null;
-    double heaviness_mod = 0;
-    double tempo_mod = 0;
-    double complexity_mod = 0;
-    static String result = "";
-    String method = null;
+    double sourness_mod = 0;
+    double saltiness_mod = 0;
+    double sweetness_mod = 0;
+    double bitterness_mod = 0;
+    double fattiness_mod = 0;
+    EventElement event = null;
     // constructor
-    public AsyncTabuMod(MoodElement mood, double heaviness_mod, double tempo_mod, double complexity_mod) {
-        this.mood = mood;
-        this.heaviness_mod = heaviness_mod;
-        this.tempo_mod = tempo_mod;
-        this.complexity_mod = complexity_mod;
+    public AsyncTabuMod(EventElement event, double sourness_mod, double saltiness_mod, double sweetness_mod, double bitterness_mod, double fattiness_mod) {
+        this.event = event;
+        this.sourness_mod = sourness_mod;
+        this.saltiness_mod = saltiness_mod;
+        this.sweetness_mod = sweetness_mod;
+        this.bitterness_mod = bitterness_mod;
+        this.fattiness_mod = fattiness_mod;
     }
     @Override
     protected Boolean doInBackground(String... params) {
-        //MainActivity.dbhandler.updatePerfectAssessments(mood.id(), this.heaviness_mod, this.tempo_mod, this.complexity_mod);
+        MainActivity.dbhandler.updatePerfectAssessments(event.id(), this.sourness_mod, this.saltiness_mod, this.sweetness_mod, this.bitterness_mod, this.fattiness_mod);
         return true;
     }
-
-
-    //MainActivity.dbhandler.addSong()
 }

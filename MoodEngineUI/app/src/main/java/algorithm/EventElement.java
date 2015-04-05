@@ -190,13 +190,13 @@ public class EventElement {
         if(isPerfect)
             range_counter++;
 
-        /*AsyncTabuMod async_update = new AsyncTabuMod( this, sourness_factor, saltiness_factor, sweetness_factor, bitterness_factor, fattiness_factor );
+        AsyncTabuMod async_update = new AsyncTabuMod( this, sourness_factor, saltiness_factor, sweetness_factor, bitterness_factor, fattiness_factor );
         if (Build.VERSION.SDK_INT >= 11) {
             //--post GB use serial executor by default --
             async_update.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         } else {
             async_update.execute();
-        }*/
+        }
     }
 
     private double FoodToUserInfluenceFactor(double counter, double user_value, double food_value, ModificationType mod_type )
