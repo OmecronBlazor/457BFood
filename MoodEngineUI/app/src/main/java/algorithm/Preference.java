@@ -11,10 +11,6 @@ public class Preference {
     private double bitterness;
     private double fattiness;
 
-    private double heaviness;
-    private double tempo;
-    private double complexity;
-
     public Preference( double sourness, double saltiness, double sweetness, double bitterness, double fattiness)
     {
         this.sweetness = sweetness;
@@ -22,13 +18,6 @@ public class Preference {
         this.sourness = sourness;
         this.bitterness = bitterness;
         this.fattiness = fattiness;
-    }
-
-    public Preference( double heaviness, double tempo, double complexity )
-    {
-        this.heaviness = heaviness;
-        this.tempo = tempo;
-        this.complexity = complexity;
     }
 
     public double sweetness(){ return sweetness; }
@@ -80,47 +69,4 @@ public class Preference {
         if( this.fattiness < LOWER_BOUND ) this.fattiness = 1;
         if( this.fattiness > UPPER_BOUND ) this.fattiness = 10;
     }
-
-
-    //All below deprecated
-    //TODO: Delete everything below
-    public double heaviness()
-    {
-        return heaviness;
-    }
-
-    public void SetHeaviness( double heaviness)
-    {
-        this.heaviness = heaviness;
-
-        if( this.heaviness < LOWER_BOUND ) this.heaviness = 1;
-        if( this.heaviness > UPPER_BOUND ) this.heaviness = 10;
-    }
-
-    public double tempo()
-    {
-        return tempo;
-    }
-
-    public void SetTempo( double tempo)
-    {
-        this.tempo = tempo;
-
-        if( this.tempo < LOWER_BOUND ) this.tempo = 1;
-        if( this.tempo > UPPER_BOUND ) this.tempo = 10;
-    }
-
-    public double complexity()
-    {
-        return complexity;
-    }
-
-    public void SetComplexity( double complexity)
-    {
-        this.complexity = complexity;
-
-        if( this.complexity < LOWER_BOUND ) this.complexity = 1;
-        if( this.complexity > UPPER_BOUND ) this.complexity = 10;
-    }
-
 }

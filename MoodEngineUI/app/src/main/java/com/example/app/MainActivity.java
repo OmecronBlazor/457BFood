@@ -47,9 +47,6 @@ public class MainActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
             if(maintainDataBase==true) {
                 if (doesDatabaseExist(context, "foodEngineManager")) {
-                    //query preferences
-                    //check add/removed songs
-                    //context.deleteDatabase("moodEngineManager");
                     dbhandler = new EventDatabaseHandler(getApplicationContext());
                     List<EventElement> list = dbhandler.getAllEvents();
                     if(!list.isEmpty()) {
@@ -63,13 +60,6 @@ public class MainActivity extends ActionBarActivity {
                             System.out.println(get.bitterness());
                             System.out.println(get.fattiness());
                         }
-                        /*AsyncSyncProcess syncProcess = new AsyncSyncProcess(getContentResolver(), getApplicationContext());
-                        if (Build.VERSION.SDK_INT >= 11) {
-                            //--post GB use serial executor by default --
-                            syncProcess.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                        } else {
-                            syncProcess.execute();
-                        }*/
                         getSupportFragmentManager().beginTransaction()
                                 .add(R.id.container, new EventSelectFragment())
                                 .commit();

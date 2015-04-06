@@ -250,11 +250,11 @@ public class FoodRecommendationFragment extends Fragment {
                 String selection_fattiness = ((RadioButton) dialog.findViewById(fattinessRadioGroup.getCheckedRadioButtonId())).getText().toString();
 
 
-                assessmentList.get(foodIter).setSourness(ModificationType.getModificationType(selection_sourness)); //getModPreferences(HEAVINESS_TYPE, selection_heaviness);
-                assessmentList.get(foodIter).setSaltiness(ModificationType.getModificationType(selection_saltiness));//getModPreferences(TEMPO_TYPE, selection_tempo);
-                assessmentList.get(foodIter).setSweetness(ModificationType.getModificationType(selection_sweetness));//getModPreferences(COMPLEXITY_TYPE, selection_complexity);
-                assessmentList.get(foodIter).setBitterness(ModificationType.getModificationType(selection_bitterness));//getModPreferences(COMPLEXITY_TYPE, selection_complexity);
-                assessmentList.get(foodIter).setFattiness(ModificationType.getModificationType(selection_fattiness));//getModPreferences(COMPLEXITY_TYPE, selection_complexity);
+                assessmentList.get(foodIter).setSourness(ModificationType.getModificationType(selection_sourness));
+                assessmentList.get(foodIter).setSaltiness(ModificationType.getModificationType(selection_saltiness));
+                assessmentList.get(foodIter).setSweetness(ModificationType.getModificationType(selection_sweetness));
+                assessmentList.get(foodIter).setBitterness(ModificationType.getModificationType(selection_bitterness));
+                assessmentList.get(foodIter).setFattiness(ModificationType.getModificationType(selection_fattiness));
 
 
                 dialog.dismiss();
